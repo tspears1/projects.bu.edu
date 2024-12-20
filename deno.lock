@@ -1725,7 +1725,7 @@
   },
   "workspace": {
     "dependencies": [
-      "npm:preact@*"
+      "npm:valtio@2.1.2"
     ]
   }
 }

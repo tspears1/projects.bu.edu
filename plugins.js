@@ -30,6 +30,11 @@ export default function () {
          options: {
             jsxDev: !isProduction,
             minify: isProduction,
+         },
+         esm: {
+            cjsExports: {
+               'valtio/vanilla': ['snapshot', 'subscribe', 'proxy'],
+            }
          }
       }));
 
