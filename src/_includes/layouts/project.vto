@@ -2,15 +2,20 @@
 layout: layouts/global.vto
 ---
 
-<h1>Hello</h1>
+<div class="site-wrapper">
+   {{ ui.sidebar({ project: slug, phases: taxonomy.phase }) }}
+   <div class="site-content">
+      {{ ui.header({ project: slug }) }}
 
-{{ ui.icon({ icon: "acorn" })}}
+      <div class="site-main">
+         <h1>This is a Project</h1>
 
-<sl-select>
-   <sl-option value="option-1">Option 1</sl-option>
-   <sl-option value="option-2">Option 2</sl-option>
-   <sl-option value="option-3">Option 3</sl-option>
-   <sl-option value="option-4">Option 4</sl-option>
-   <sl-option value="option-5">Option 5</sl-option>
-   <sl-option value="option-6">Option 6</sl-option>
-</sl-select>
+         <ul>
+            <li>Project: {{ title }}</li>
+            <li>Slug: {{ slug }}</li>
+            <li>Description: {{ description }}</li>
+            <li>Selected: {{ selected }}</li>
+         </ul>
+      </div>
+   </div>
+</div>

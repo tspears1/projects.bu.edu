@@ -2,10 +2,11 @@ import { proxy, subscribe } from 'npm:valtio/vanilla'
 
 const store = proxy(
    JSON.parse(localStorage.getItem('id-projects')) ||{
-      theme: 'light',
+      theme: 'auto',
       list: 'grid',
       sort: 'newest',
-      sidebar: 'closed'
+      sidebar: 'closed',
+      activeProject: '',
    }
 )
 

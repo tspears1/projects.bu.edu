@@ -33,7 +33,8 @@ export default function () {
          },
          esm: {
             cjsExports: {
-               'valtio/vanilla': ['snapshot', 'subscribe', 'proxy'],
+               'valtio/vanilla': ['snapshot', 'subscribe', 'proxy', 'ref'],
+               'valtio/vanilla/utils': ['subscribeKey', 'watch', 'devtools', 'derive', 'proxyWithHistory', 'proxySet', 'proxyMap']
             }
          }
       }));

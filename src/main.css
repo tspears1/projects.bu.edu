@@ -1,8 +1,10 @@
-@layer reset, base, ui, theme;
+@layer reset, base, global, ui, theme;
 
 @import '/css/base/variables.css';
 @import '/css/base/reset.css' layer(reset);
 @import '/css/base/base.css' layer(base);
+
+@import '/css/global/site.css' layer(global);
 
 @import '/css/components/icon.css' layer(ui);
 

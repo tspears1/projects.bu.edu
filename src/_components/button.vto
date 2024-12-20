@@ -1,0 +1,65 @@
+{{ set _content = content ?? label ?? '' }}
+{{ set _href = href ?? null }}
+{{ set _target = target ?? null }}
+{{ set _classes = classes ?? '' }}
+{{ set _iconStart = icon && Array.isArray(icon) ? icon[0] : icon ?? null }}
+{{ set _iconEnd = icon && Array.isArray(icon) ? icon[1] : null ?? null }}
+{{ set _srOnly = hiddenText ?? null }}
+{{ set _tooltip = tooltip ?? null}}
+{{ set _tag = tag ?? 'button'}}
+{{ set _attrs = attrs ?? null }}
+
+{{ if _href && _href !== '#' && _href !== '' }}
+   {{ set _tag = 'a' }}
+{{ /if }}
+
+{{ set tooltipPlacements = [
+   'top-start',
+   'top',
+   'top-end',
+   'right-start',
+   'right',
+   'right-end',
+   'bottom-start',
+   'bottom',
+   'bottom-end',
+   'left-start',
+   'left',
+   'left-end',
+]
+}}
+
+
+{{ set _btn }}
+<{{ _tag }}
+   class="button {{ _classes }}"
+   {{ _target ? 'target="' + _target + '"' : '' }}
+   {{ _href ? 'href="' + _href + '"' : '' }}
+   {{ if _attrs }}
+      {{ for key, value of _attrs }}
+         {{ key }}="{{ value }}"
+      {{ /for }}
+   {{ /if }}
+>
+   {{ if _iconStart }}
+      {{ ui.icon({ icon: _iconStart, classes: "button__icon button__icon--start" }) }}
+   {{ /if }}
+   <span class="button__text {{ _srOnly ? 'sr-only' : '' }}">{{ _content }}</span>
+   {{ if _iconEnd }}
+      {{ ui.icon({ icon: _iconEnd, classes: "button__icon button__icon--end" }) }}
+   {{ /if }}
+</{{ _tag }}>
+{{ /set }}
+
+{{ if _tooltip }}
+   {{ set placement = tooltipPlacements.includes(tooltip) ? tooltip : 'top' }}
+   <sl-tooltip
+      content="{{ label ?? _content }}"
+      placement="{{ placement }}"
+      style="--sl-tooltip-arrow-size: 0;"
+   >
+      {{ _btn }}
+   </sl-tooltip>
+{{ else }}
+   {{ _btn }}
+{{ /if }}

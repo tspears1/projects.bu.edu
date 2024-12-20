@@ -1,0 +1,13 @@
+{{ set _project = project ?? null }}
+{{ set _phase = phase ?? null }}
+
+{{ if _project }}
+   {{ set _projectTitle = projectsData.projects.find(project => project.slug == _project).title }}
+<sl-breadcrumb>
+   <sl-breadcrumb-item href="/{{ _project }}/">{{ _projectTitle }}</sl-breadcrumb-item>
+   {{ if _phase }}
+      {{ set _phaseTitle = taxonomy.phase.find(phase => phase.value == _phase).label }}
+      <sl-breadcrumb-item>{{ _phaseTitle }}</sl-breadcrumb-item>
+   {{ /if }}
+</sl-breadcrumb>
+{{ /if }}

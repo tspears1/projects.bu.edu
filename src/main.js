@@ -1,4 +1,3 @@
-import { snapshot } from 'npm:valtio/vanilla'
-import store from '@store'
+import onMount from './_includes/js/lifecycle/onMount.js'
 
-localStorage.setItem('id-projects', JSON.stringify(store))
+onMount()

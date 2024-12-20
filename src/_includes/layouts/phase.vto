@@ -1,0 +1,37 @@
+---
+layout: layouts/global.vto
+---
+
+<div class="site-wrapper">
+   {{ ui.sidebar({ project: project.slug, phase: slug, phases: taxonomy.phase }) }}
+   <div class="site-content">
+      {{ ui.header({ project: project.slug, phase: slug }) }}
+
+      <div class="site-main">
+      <h1>This is a Phase</h1>
+
+      <ul>
+         <li>Phase: {{ title }}</li>
+         <li>Slug: {{ slug }}</li>
+         <li>url: {{ url }}</li>
+         <li>Project: {{ project.title }}</li>
+         <li>Project Slug: {{ project.slug }}</li>
+         <li>Project Selected: {{ project.selected }}</li>
+         <li>Project Description: {{ project.description }}</li>
+      </ul>
+
+      {{ for sprint of sprints.filter(sprint => sprint.sprintList.length)}}
+         <h2>{{ sprint.title }}</h2>
+         <p>{{ new Date(sprint.date).toDateString() }}</p>
+         <p>{{ sprint.project }}</p>
+
+         {{ for asset of sprint.sprintList }}
+            <h3>{{ asset.title }}</h3>
+            <p>{{ asset.description }}</p>
+            <p>{{ new Date(asset.lastModified).toDateString() }}</p>
+            <p>{{ asset.fileUrl }}</p>
+            <p>{{ asset.status }}</p>
+         {{ /for }}
+      {{ /for }}
+   </div>
+</div>

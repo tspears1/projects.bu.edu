@@ -37,8 +37,8 @@ const sprints = {
          label: "Project",
          required: true,
          init: (field, {data}) => {
-            field.value = data.projects.find(project => project.selected)?.slug ?? null
-            field.options = data.projects.map(project => {
+            field.value = data.projects.selected ?? null
+            field.options = data.projects.projects.map(project => {
                return {
                   label: project.title,
                   value: project.slug,
@@ -61,7 +61,7 @@ const sprints = {
          }
       },
       {
-         name: "sprint-list",
+         name: "sprintList",
          type: "object-list",
          label: "Sprint Assets",
          required: true,
@@ -78,14 +78,14 @@ const sprints = {
                label: "Asset Description",
             },
             {
-               name: "last-modified",
+               name: "lastModified",
                type: "current-datetime",
                attributes: {
                   readonly: true
                }
             },
             {
-               name: "file-url",
+               name: "fileUrl",
                type: 'url',
                label: 'File URL',
                required: true,

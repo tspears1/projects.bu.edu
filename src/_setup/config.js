@@ -1,5 +1,6 @@
 export default {
    code: "CFA",
-   brand: "College of Fine Arts",
-   brand_secondary: "School of Theatre"
+   brand: "Boston University",
+   brand_parent: "College of Fine Arts",
+   brand_subparent: "School of Theatre"
 }

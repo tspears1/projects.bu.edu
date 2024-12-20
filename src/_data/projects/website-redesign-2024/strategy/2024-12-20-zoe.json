@@ -1,0 +1,16 @@
+{
+  "type": "sprint",
+  "layout": "layouts/sprint.vto",
+  "title": "Zoë",
+  "date": "2024-12-20",
+  "project": "website-redesign-2024",
+  "phase": "strategy",
+  "sprintList": [
+    {
+      "title": "A Test",
+      "lastModified": "2024-12-20T16:57:00.000Z",
+      "fileUrl": "https://vento.js.org/",
+      "status": "reviewed"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{{ set _project = project ?? null }}
+{{ set _phase = phase ?? null }}
+
+<header class="site-header">
+   {{ ui.button({
+      label: 'Toggle Sidebar',
+      classes: 'button--ui button--toggle',
+      icon: 'sidebar-simple',
+      attrs: { 'data-sidebar-toggle': ''},
+      tooltip: 'right',
+      srOnly: true,
+   })}}
+   {{ ui.breadcrumbs({ project: _project, phase: _phase }) }}
+   {{ ui.brand({ tag: 'h2'}) }}
+   {{ ui.themeToggle() }}
+</header>
