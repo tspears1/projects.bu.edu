@@ -6,6 +6,7 @@
 
 @import '/css/global/site.css' layer(global);
 
+@import '/css/components/button.css' layer(ui);
 @import '/css/components/icon.css' layer(ui);
 
 @layer base {

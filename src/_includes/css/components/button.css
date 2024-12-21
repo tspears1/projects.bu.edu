@@ -1,0 +1,11 @@
+.button {
+   &:where(button, a, span, div) {
+      appearance: none;
+      background: none;
+      border: 0;
+      border-radius: 0;
+      color: unset;
+      margin: 0;
+      padding: 0;
+   }
+}

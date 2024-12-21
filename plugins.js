@@ -21,7 +21,7 @@ export default function () {
          cssFile: "./main.css",
          placeholder: "/* google-fonts */",
          fonts: {
-            lexend: "https://fonts.googleapis.com/css2?family=Lexend:wght@100..900"
+            mona: "https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
          }
       }));
 
