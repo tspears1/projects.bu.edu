@@ -1,5 +1,8 @@
+
 export default (data, helpers) => {
   const { title, bodyClasses, org_code, org_brand, org_brand_secondary } = data;
+
+  // console.log('global', data, helpers);
 
   return(
     <html>
@@ -9,9 +12,6 @@ export default (data, helpers) => {
       <body className={bodyClasses}>
         <div id="app"></div>
         <script type="module" src="./src/main.js" prerender></script>
-        <script>
-          window.lume = {{ data }};
-        </script>
       </body>
     </html>
   )

@@ -1,11 +1,14 @@
+import Button from "../_components/Button.jsx";
+import taxonomy from "../_taxonomy/index.js";
 
-const Project = ({ title, description, children }) => {
+
+const Project = ({ data }) => {
+   const { phase: phases } = taxonomy
 
    return (
       <article>
-         <h1>{title}</h1>
-         <p>{description}</p>
-         {children}
+         <h1>Projects</h1>
+         <Button>Click Me</Button>
       </article>
    )
 }
