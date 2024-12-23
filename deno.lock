@@ -53,6 +53,7 @@
     "npm:@types/estree@1.0.6": "1.0.6",
     "npm:@types/node@*": "22.5.4",
     "npm:@types/react-dom@18.3.1": "18.3.1",
+    "npm:@types/react@*": "18.3.12",
     "npm:@types/react@18.3.12": "18.3.12",
     "npm:esbuild-plugin-copy@*": "2.1.1_esbuild@0.24.0",
     "npm:estree-walker@3.0.3": "3.0.3",
@@ -65,13 +66,15 @@
     "npm:preact-render-to-string@6.5.11": "6.5.11_preact@10.25.1",
     "npm:preact@10.25.1": "10.25.1",
     "npm:react-dom@18.3.1": "18.3.1_react@18.3.1",
+    "npm:react@*": "18.3.1",
     "npm:react@18.3.1": "18.3.1",
     "npm:sass@1.80.6": "1.80.6",
     "npm:sass@1.82.0": "1.82.0",
     "npm:sharp@0.33.5": "0.33.5",
     "npm:svg2png-wasm@1.4.1": "1.4.1",
     "npm:terser@5.36.0": "5.36.0",
-    "npm:terser@5.37.0": "5.37.0"
+    "npm:terser@5.37.0": "5.37.0",
+    "npm:valtio@*": "2.1.2_@types+react@18.3.12_react@18.3.1"
   },
   "jsr": {
     "@davidbonnet/astring@1.8.6": {
@@ -924,6 +927,9 @@
     "preact@10.25.1": {
       "integrity": "sha512-frxeZV2vhQSohQwJ7FvlqC40ze89+8friponWUFeVEkaCfhC6Eu4V0iND5C9CXz8JLndV07QRDeXzH1+Anz5Og=="
     },
+    "proxy-compare@3.0.1": {
+      "integrity": "sha512-V9plBAt3qjMlS1+nC8771KNf6oJ12gExvaxnNzN/9yVRLdTv/lc+oJlnSzrdYDAvBfTStPCoiaCOTmTs0adv7Q=="
+    },
     "punycode.js@2.3.1": {
       "integrity": "sha512-uxFIHU0YlHYhDQtV4R9J6a52SLx28BCjT+4ieh7IGbgwVJWO+km431c4yRlREUAsAmt/uMjQUyQHNEPf0M39CA=="
     },
@@ -1085,6 +1091,14 @@
     },
     "universalify@2.0.1": {
       "integrity": "sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw=="
+    },
+    "valtio@2.1.2_@types+react@18.3.12_react@18.3.1": {
+      "integrity": "sha512-fhekN5Rq7dvHULHHBlJeXHrQDl0Jj9GXfNavCm3gkD06crGchaG1nf/J7gSlfZU2wPcRdVS5jBKWHtE2NNz97A==",
+      "dependencies": [
+        "@types/react",
+        "proxy-compare",
+        "react"
+      ]
     }
   },
   "redirects": {
@@ -1725,6 +1739,8 @@
   },
   "workspace": {
     "dependencies": [
+      "npm:@types/react@*",
+      "npm:react@*",
       "npm:valtio@2.1.2"
     ]
   }

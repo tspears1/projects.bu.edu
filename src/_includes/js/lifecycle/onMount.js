@@ -10,21 +10,12 @@ const onMount = () => {
    // Save the store
    localStorage.setItem('id-projects', JSON.stringify(store))
 
-   const phases = taxonomy.phase.map(phase => phase.value)
-   const allProjects = projects.projects.filter(project => !project.archived)
+   const phases = taxonomy.phases.map(phase => phase.value)
 
    // Redirect to the active project phase, if the url is the root
    if (location.pathname == '/') {
-      location.href = `/${store.activeProject}/${phases[0]}/`
+      location.href = `/${store.activeProject}/`
       return
-   }
-
-   // Redirect to the active project phase, if the url is the project root
-   for (const project of allProjects) {
-      if (project.slug == location.pathname.slice(1, -1)) {
-         location.href = `/${project.slug}/${phases[0]}/`
-         return
-      }
    }
 }
 

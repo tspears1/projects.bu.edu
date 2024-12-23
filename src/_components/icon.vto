@@ -1,9 +1,0 @@
-{{ set _icon = icon ?? null }}
-{{ set _classes = classes ?? '' }}
-{{ set _variant = variant ?? 'regular' }}
-
-{{ if _icon }}
-   <div class="icon icon-{{_icon}} {{ _classes ?? ''}}">
-      <img class="icon__svg" src="{{ _icon |> icon("phosphor", _variant) }}" inline />
-   </div>
-{{ /if }}

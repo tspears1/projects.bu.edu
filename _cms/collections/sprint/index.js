@@ -3,18 +3,13 @@ import { slugify } from '../../../_cms/utils/slugify.js'
 
 const sprints = {
    name: "sprint",
-   store: `src:_data/projects/**/**/*.json`,
+   store: `src:_data/sprints/**/**/*.json`,
    nameField: (data) => `${data.project}/${data.phase}/${snakeDate(data.date)}-${slugify(data.title)}.json`,
    fields: [
       {
          name: "type",
          type: "hidden",
          value: "sprint"
-      },
-      {
-         name: "layout",
-         type: "hidden",
-         value: "layouts/sprint.vto"
       },
       {
          name: "title",
@@ -61,7 +56,7 @@ const sprints = {
          }
       },
       {
-         name: "sprintList",
+         name: "assetList",
          type: "object-list",
          label: "Sprint Assets",
          required: true,

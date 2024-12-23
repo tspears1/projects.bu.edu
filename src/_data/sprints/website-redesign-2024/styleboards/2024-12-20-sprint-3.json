@@ -1,21 +1,20 @@
 {
   "type": "sprint",
-  "layout": "layouts/sprint.vto",
   "title": "Sprint 3",
   "date": "2024-12-20",
   "project": "website-redesign-2024",
-  "phase": "strategy",
-  "sprintList": [
+  "phase": "styleboards",
+  "assetList": [
     {
       "title": "Wires",
       "description": "Draft 1",
-      "lastModified": "2024-12-20T16:56:00.000Z",
+      "lastModified": "2024-12-22T19:46:00.000Z",
       "fileUrl": "https://vento.js.org/syntax/for/",
       "status": "rejected"
     },
     {
       "title": "Mockup",
-      "lastModified": "2024-12-20T16:56:00.000Z",
+      "lastModified": "2024-12-22T19:46:00.000Z",
       "fileUrl": "https://vento.js.org/syntax/",
       "status": "reviewed"
     }

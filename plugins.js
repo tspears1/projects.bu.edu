@@ -3,6 +3,7 @@ import googleFonts from "lume/plugins/google_fonts.ts";
 import esbuild from "lume/plugins/esbuild.ts";
 import icons from "lume/plugins/icons.ts";
 import inline from "lume/plugins/inline.ts";
+import jsx from "lume/plugins/jsx.ts";
 
 // Data ============================================
 import taxonomy from './src/_setup/taxonomy.js'
@@ -14,7 +15,7 @@ const isProduction = false; // Need to update late with .env vars
 export default function () {
    return (site) => {
       site.data('taxonomy', taxonomy)
-      site.data('projectsData', projects)
+      site.data('projects', projects)
       site.data('org', config)
 
       site.use(googleFonts({
@@ -26,7 +27,7 @@ export default function () {
       }));
 
       site.use(esbuild({
-         extensions: [".js"],
+         extensions: [".js", ".jsx"],
          options: {
             jsxDev: !isProduction,
             minify: isProduction,
@@ -41,6 +42,9 @@ export default function () {
 
       site.use(icons({ folder: "icons"}));
       site.use(inline());
+      site.use(jsx({
+         pageSubExtension: ".page",
+      }));
 
       site.copy('./main.css');
       site.copy('_includes/css', 'css' )

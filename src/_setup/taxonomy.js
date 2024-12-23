@@ -1,5 +1,5 @@
 export default {
-   phase: [
+   phases: [
       {
          value: 'strategy',
          label: 'Strategy',
