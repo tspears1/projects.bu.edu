@@ -130,6 +130,12 @@ export default {
          label: 'Codepen',
          icon: 'codepen-logo',
          regex: /codepen\.io/
+      },
+      {
+         value: 'link',
+         label: 'Link',
+         icon: 'globe',
+         regex: /.*/
       }
    ]
 }

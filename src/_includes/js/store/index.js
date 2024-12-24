@@ -7,6 +7,7 @@ const store = proxy(
       sort: 'newest',
       sidebar: 'closed',
       activeProject: '',
+      phase: 'strategy',
    }
 )
 

@@ -13,15 +13,14 @@ export default {
          id: 2,
          title: 'Website Redesign 2025',
          slug: 'website-redesign-2025',
-         archived: false,
+         archived: true,
          description: 'This is a description of the project.',
       },
       {
          id: 3,
          title: 'Website Redesign 2026',
          slug: 'website-redesign-2026',
-         selected: false,
-         archived: true,
+         archived: false,
          description: 'This is a description of the project.',
       },
       {

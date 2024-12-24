@@ -19,15 +19,17 @@ const Sidebar = ({ project, phase, ui }) => {
          </ul>
          <h3>Phases</h3>
          <ul>
-            {taxonomyData.phases.map(ph => (
+            {taxonomyData.phases.map((ph, index) => (
                <li className='site-sidebar__phase' key={ph.value}>
-                  <ui.Button
+                  <ui.RadioButton
                      label={ph.label}
+                     group='phase'
+                     value={ph.value}
+                     checked={index == 0}
                      classes='site-sidebar__phase__button'
                      icon={[ph.icon, 'caret-right']}
-                     href={ph.value == project ? null : `/${project}/${ph.value}/`}
-                     tag={ph.value == project ? 'div' : null}
                      tooltip='right'
+                     attrs={{ 'data-phase': ph.value }}
                   />
                </li>
             ))}

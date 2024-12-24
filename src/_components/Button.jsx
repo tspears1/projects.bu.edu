@@ -1,7 +1,6 @@
 import { TOOLTIP_PLACEMENTS } from "../_includes/js/constants/tooltip-placements.js"
 
 const Button = ({
-   children = '',
    label = '',
    href = null,
    target = null,
@@ -28,14 +27,14 @@ const Button = ({
          {...attrs}
       >
          {iconStart && <ui.Icon icon={iconStart} classes="button__icon button__icon--start" />}
-         <span className={`button__text ${hiddenText ? 'sr-only' : ''}`}>{children ?? label}</span>
+         <span className={`button__text ${hiddenText ? 'sr-only' : ''}`}>{label}</span>
          {iconEnd && <ui.Icon icon={iconEnd} classes="button__icon button__icon--end" />}
       </Tag>
    )
 
    const TooltipBtn = () => (
       <sl-tooltip
-         children={label ?? children}
+         content={label}
          placement={TOOLTIP_PLACEMENTS.includes(tooltip) ? tooltip : 'top'}
          style={{'--sl-tooltip-arrow-size': 0}}
       >

@@ -3,7 +3,7 @@ const ThemeToggle = ({ ui }) => {
       <ui.Button
          label="Toggle Theme"
          classes="button--ui button--toggle"
-         icon="sun"
+         icon={['sun', 'moon']}
          attrs={{ 'data-theme-toggle': 'auto'}}
          tooltip="bottom"
          srOnly={true}
