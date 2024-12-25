@@ -6,12 +6,13 @@ const store = proxy(
       list: 'grid',
       sort: 'newest',
       sidebar: 'closed',
-      activeProject: '',
       phase: 'strategy',
+      sprints: {}
    }
 )
 
 subscribe(store, () => {
+   console.log('store has been updated', {store})
    localStorage.setItem('id-projects', JSON.stringify(store))
 })
 

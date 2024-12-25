@@ -23,7 +23,7 @@ const RadioButton = ({
                className="radio-button__input"
                name={group}
                value={value}
-               checked={checked}
+               defaultChecked={checked}
                {...attrs}
             />
             <span className="radio-button__text">{label}</span>

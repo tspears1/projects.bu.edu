@@ -1,7 +1,7 @@
 import projectsData from '../_setup/projects.js'
 import taxonomyData from '../_setup/taxonomy.js'
 
-const Sidebar = ({ project, phase, ui }) => {
+const Sidebar = ({ project, ui }) => {
    return (
       <aside className='site-sidebar'>
          <h3>Projects</h3>
