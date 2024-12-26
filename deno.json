@@ -1,22 +1,24 @@
 {
   "imports": {
+    "@components/": "./src/_includes/js/components/",
+    "@context/": "./src/_includes/js/context/",
+    "@hooks/": "./src/_includes/js/hooks/",
     "lume/": "https://deno.land/x/lume@v2.4.3/",
     "lume/cms/": "https://cdn.jsdelivr.net/gh/lumeland/cms@v0.7.6/",
-    "valtio": "npm:valtio@2.1.2",
-    "@store": "./src/_includes/js/store/index.js"
+    "preact": "npm:preact@^10.25.3",
+    "valtio": "npm:valtio@2.1.2"
   },
   "tasks": {
     "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
-    "build": "deno task lume",
-    "serve": "deno task lume -s",
-    "cms": "deno task lume cms"
+    "build": "export TASK=prod && deno task lume",
+    "serve": "export TASK=dev && deno task lume -s",
+    "cms": "export TASK=dev && deno task lume cms"
   },
   "compilerOptions": {
     "types": [
       "lume/types.ts"
     ],
     "jsx": "react-jsx",
-    "jsxImportSource": "npm:react",
-    "jsxImportSourceTypes": "npm:@types/react"
+    "jsxImportSource": "npm:preact"
   }
 }

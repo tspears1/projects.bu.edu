@@ -3,9 +3,7 @@ export const layout = 'layouts/global.jsx'
 
 const IndexPage = () => {
    return (
-      <>
-         <h1>You are home.</h1>
-      </>
+      <></>
    )
 }
 

@@ -3,14 +3,15 @@ import googleFonts from "lume/plugins/google_fonts.ts";
 import esbuild from "lume/plugins/esbuild.ts";
 import icons from "lume/plugins/icons.ts";
 import inline from "lume/plugins/inline.ts";
-import jsx from "lume/plugins/jsx.ts";
+import jsx from "lume/plugins/jsx_preact.ts";
+import { Page } from "lume/core/file.ts";
 
 // Data ============================================
 import taxonomy from './src/_setup/taxonomy.js'
 import projects from './src/_setup/projects.js'
 import config from './src/_setup/config.js'
 
-const isProduction = false; // Need to update late with .env vars
+const isProduction = Deno.env.get('TASK') == 'prod'
 
 export default function () {
    return (site) => {
@@ -34,8 +35,9 @@ export default function () {
          },
          esm: {
             cjsExports: {
-               'valtio/vanilla': ['snapshot', 'subscribe', 'proxy', 'ref'],
-               'valtio/vanilla/utils': ['subscribeKey', 'watch', 'devtools', 'derive', 'proxyWithHistory', 'proxySet', 'proxyMap']
+               'preact': ['render'],
+               'preact/hooks': ['useEffect', 'useState', 'useReducer', 'useRef', 'useLayoutEffect', 'useMemo', 'useCallback', 'useContext'],
+               '@preact/signals-core': ['signal', 'computed', 'effect', 'batch'],
             }
          }
       }));
@@ -48,5 +50,22 @@ export default function () {
 
       site.copy('./main.css');
       site.copy('_includes/css', 'css' )
+
+      site.process(['.html'], (pages, allPages) => {
+         if (!pages[0]) return
+         const data = pages[0].data
+         const output = {
+            sprints: data.sprints,
+            projects: data.projects,
+            taxonomy: data.taxonomy,
+            org: data.org
+         }
+         const dataPage = Page.create({
+            url: '/data.json',
+            content: JSON.stringify(output),
+         })
+
+         allPages.push(dataPage)
+      })
    }
 }

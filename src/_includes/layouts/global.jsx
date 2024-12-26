@@ -1,4 +1,4 @@
-const globalLayout = ({ title, bodyClasses, sprints, org, children}) => {
+const globalLayout = ({ title, org, bodyClasses }) => {
   return (
     <html>
       <head>
@@ -9,7 +9,7 @@ const globalLayout = ({ title, bodyClasses, sprints, org, children}) => {
         <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.19.1/cdn/shoelace-autoloader.js"></script>
       </head>
       <body className={ bodyClasses }>
-        { children }
+        <div id="app"></div>
         <script type="module" src="/main.js"></script>
       </body>
     </html>
