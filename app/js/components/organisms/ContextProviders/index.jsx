@@ -1,5 +1,5 @@
 // Context ============================================
-import { DatabaseProvider } from '@context/database/index.jsx'
+import { DatabaseProvider } from '../../../context/database/index.jsx'
 
 /**
  * @component ContextProviders - Provides context providers.

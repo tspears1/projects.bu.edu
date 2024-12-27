@@ -1,4 +1,4 @@
-import { TOOLTIP_PLACEMENTS } from "../_includes/js/constants/tooltip-placements.js"
+import { TOOLTIP_PLACEMENTS } from "../../app/js/constants/tooltip-placements.js"
 
 const Button = ({
    label = '',

@@ -1,5 +1,5 @@
-import projectsData from '../_setup/projects.js'
-import taxonomyData from '../_setup/taxonomy.js'
+import projectsData from '../../_setup/projects.js'
+import taxonomyData from '../../_setup/taxonomy.js'
 
 const Sidebar = ({ project, ui }) => {
    return (

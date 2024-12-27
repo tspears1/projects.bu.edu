@@ -1,4 +1,4 @@
-import taxonomy from '../_setup/taxonomy.js'
+import taxonomy from '../../_setup/taxonomy.js'
 
 const getFileType = (fileUrl) => {
    if (!fileUrl) return null

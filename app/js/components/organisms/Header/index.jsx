@@ -1,6 +1,6 @@
-import { useEffect } from "npm:preact@10.25.1/hooks"
-import { useDatabase } from '@context/database/index.jsx'
-
+import { useEffect } from "react"
+import { useDatabase } from '../../../context/database/index.jsx'
+import { Horse } from '@phosphor-icons/react/dist/ssr'
 /**
  * @component Header - Main application component.
  *
@@ -19,6 +19,7 @@ const Header = () => {
       <header className='site-header'>
          <div className='site-header__container'>
             <h2>The Header</h2>
+            <Horse />
          </div>
       </header>
    )

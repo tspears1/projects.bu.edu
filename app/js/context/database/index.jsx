@@ -1,7 +1,5 @@
-// Preact
-import { useEffect, useContext, useState } from "npm:preact@10.25.1/hooks"
-import { createContext } from "npm:preact@10.25.1"
-import sprints from "../../../../../_cms/collections/sprint/index.js";
+// React
+import { useEffect, useContext, useState, createContext } from "react"
 
 // Create context.
 const DatabaseContext = createContext(null)
@@ -22,19 +20,20 @@ const useDatabase = () => useContext(DatabaseContext)
  * @returns {JSX.Element} component - Component JSX.
  */
 const DatabaseProvider = ({ children }) => {
-   const [database, setDatabase] = useState({})
+   const [database, setDatabase] = useState(null)
 
-   useEffect(async () => {
-      const _db = await fetch('/data.json').then(res => res.json())
-      setDatabase(_db)
+   useEffect(() => {
+      fetch('/data.json').then(res => res.json()).then(data => {
+         setDatabase(data)
+      })
    }, [])
 
    return (
       <DatabaseContext.Provider value={{
-         sprints: database.sprints,
-         projects: database.projects,
-         taxonomy: database.taxonomy,
-         org: database.org
+         sprints: database?.sprints,
+         projects: database?.projects,
+         taxonomy: database?.taxonomy,
+         org: database?.org
       }}>
          { children }
       </DatabaseContext.Provider>
