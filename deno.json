@@ -6,7 +6,7 @@
     "@phosphor-icons/react": "npm:@phosphor-icons/react@^2.1.7",
     "classnames": "npm:classnames@^2.5.1",
     "lume/": "https://deno.land/x/lume@v2.4.3/",
-    "lume/cms/": "https://cdn.jsdelivr.net/gh/lumeland/cms@v0.7.6/",
+    "lume/cms/": "https://cdn.jsdelivr.net/gh/lumeland/cms@v0.7.7/",
     "react": "https://esm.sh/react",
     "react-dom/": "https://esm.sh/react-dom/",
     "valtio": "npm:valtio@2.1.2"

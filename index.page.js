@@ -9,13 +9,13 @@ export default function (_data, { url }) {
       <html>
          <head>
             <meta charset="utf-8">
-			   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <title>ID://PROJECTS</title>
-            <link rel="stylesheet" href="${url('/main.css')}" />
+            <link rel="stylesheet" href="${url('./main.css')}" />
          </head>
          <body>
-            <div id="app">${ssr}</div>
-            <script type="module" src="${url('/main.js')}"></script>
+            <div id="_root">${ssr}</div>
+            <script type="module" src="${url('./main.js')}"></script>
          </body>
       </html>
    `

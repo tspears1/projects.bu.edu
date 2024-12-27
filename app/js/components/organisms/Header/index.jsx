@@ -18,8 +18,7 @@ const Header = () => {
    return (
       <header className='site-header'>
          <div className='site-header__container'>
-            <h2>The Header</h2>
-            <Horse />
+            <h2><strong>ID://PROJECTS - projects.bu.edu</strong></h2>
          </div>
       </header>
    )

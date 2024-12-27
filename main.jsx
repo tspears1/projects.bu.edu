@@ -7,7 +7,7 @@ import App from './app/js/App.jsx'
 // Render ============================================
 const render = () => {
    ReactDOMClient.hydrateRoot(
-      document.getElementById('app'),
+      document.getElementById('_root'),
       <App />
    )
 }
