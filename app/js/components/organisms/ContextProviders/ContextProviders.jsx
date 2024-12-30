@@ -1,5 +1,6 @@
 // Context ============================================
-import { DatabaseProvider } from '../../../context/database/index.jsx'
+import { DatabaseProvider } from '@context/database/database-context.jsx'
+import { SidebarProvider } from '@context/sidebar/sidebar-context.jsx'
 
 /**
  * @component ContextProviders - Provides context providers.
@@ -12,7 +13,9 @@ import { DatabaseProvider } from '../../../context/database/index.jsx'
 const ContextProviders = ({ children }) => {
    return (
       <DatabaseProvider>
-         { children }
+         <SidebarProvider>
+            { children }
+         </SidebarProvider>
       </DatabaseProvider>
    )
 }

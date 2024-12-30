@@ -1,5 +1,6 @@
 import { useEffect } from "react"
-import { useDatabase } from '../../../context/database/index.jsx'
+import { useDatabase } from '@context/database/database-context.jsx'
+import { Button } from '@components/atoms/Button/Button.jsx'
 import { Horse } from '@phosphor-icons/react/dist/ssr'
 /**
  * @component Header - Main application component.
@@ -18,7 +19,10 @@ const Header = () => {
    return (
       <header className='site-header'>
          <div className='site-header__container'>
-            <h2><strong>ID://PROJECTS - projects.bu.edu</strong></h2>
+            <div>sidebar-toggle</div>
+            <div>breadcrumbs</div>
+            <div>brand</div>
+            <div>theme-toggle</div>
          </div>
       </header>
    )

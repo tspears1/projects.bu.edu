@@ -1,4 +1,13 @@
-const Sprint = ({ sprint, ui }) => {
+import { AssetCard } from '@components/molecules/AssetCard/AssetCard.jsx'
+
+/**
+ * @component Sprint - Main application component.
+ *
+ * @param {SprintProps} props - Component props.
+ *
+ * @returns {JSX.Element}
+ */
+const Sprint = ({ sprint }) => {
    const { title, date, assetList } = sprint
    const _date = new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
    return (
@@ -13,7 +22,7 @@ const Sprint = ({ sprint, ui }) => {
             </li>
             {assetList.map((asset, index) => (
                <li className="project-sprint__list-item" key={`asset-${index}`}>
-                  <ui.Asset asset={asset} />
+                  <AssetCard asset={asset} />
                </li>
             ))}
          </ul>

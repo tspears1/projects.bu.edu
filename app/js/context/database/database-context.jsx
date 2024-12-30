@@ -9,7 +9,13 @@ const DatabaseContext = createContext(null)
  *
  * @returns {Object} database - Database context.
  */
-const useDatabase = () => useContext(DatabaseContext)
+const useDatabase = () => {
+   const context = useContext(DatabaseContext)
+   if (!context) {
+      throw new Error("useDatabase must be used within a DatabaseProvider.")
+   }
+   return context
+}
 
 /**
  * @component DatabaseProvider - Provides database context.
@@ -29,14 +35,14 @@ const DatabaseProvider = ({ children }) => {
    }, [])
 
    return (
-      <DatabaseContext.Provider value={{
+      <DatabaseContext value={{
          sprints: database?.sprints,
          projects: database?.projects,
          taxonomy: database?.taxonomy,
          org: database?.org
       }}>
          { children }
-      </DatabaseContext.Provider>
+      </DatabaseContext>
    )
 }
 

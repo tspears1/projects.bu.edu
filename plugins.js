@@ -1,8 +1,6 @@
 // Plugins =========================================
-import googleFonts from "lume/plugins/google_fonts.ts";
 import basePath from "lume/plugins/base_path.ts";
 import esbuild from "lume/plugins/esbuild.ts";
-import relativeUrls from "lume/plugins/relative_urls.ts";
 import { Page } from "lume/core/file.ts";
 
 // Data ============================================
@@ -18,28 +16,29 @@ export default function () {
       site.data('projects', projects)
       site.data('org', config)
 
-      // site.use(googleFonts({
-      //    cssFile: "./main.css",
-      //    placeholder: "/* google-fonts */",
-      //    fonts: {
-      //       mona: "https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap"
-      //    }
-      // }));
-
       site.use(esbuild({
          extensions: [".jsx"],
          options: {
             minify: isProduction,
+            bundle: true,
          },
+         esm: {
+            dev: !isProduction,
+            deps: {
+               "react": "https://esm.sh/v135/react@19.0.0",
+               "react/": "https://esm.sh/v135/react@19.0.0/",
+               "@radix-ui/react-slot": "https://esm.sh/v135/react@19.0.0",
+               "@radix-ui/react-tooltip": "https://esm.sh/v135/react@19.0.0",
+               "@radix-ui/react-context": "https://esm.sh/v135/react@19.0.0",
+               "react-dom": "https://esm.sh/v135/*react-dom@19.0.0",
+               "react-dom/": "https://esm.sh/v135/*react-dom@19.0.0/",
+            }
+         }
       }));
 
       site.use(basePath({
          extensions: [".html", ".css"], // Fix URLs inside HTML and CSS files
       }));
-
-      // site.use(relativeUrls({
-      //    extensions: [".html", ".css"], // Fix URLs inside HTML and CSS files
-      // }));
 
       site.ignore('app');
 
