@@ -35,14 +35,14 @@ const DatabaseProvider = ({ children }) => {
    }, [])
 
    return (
-      <DatabaseContext value={{
+      <DatabaseContext.Provider value={{
          sprints: database?.sprints,
          projects: database?.projects,
          taxonomy: database?.taxonomy,
          org: database?.org
       }}>
          { children }
-      </DatabaseContext>
+      </DatabaseContext.Provider>
    )
 }
 

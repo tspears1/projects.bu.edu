@@ -1,5 +1,5 @@
 // React ==================================================
-import { createContext, useContext, useState, useEffect, useCallback, useMemo } from "react"
+import { createContext, useContext, useState, useEffect, useCallback, useMemo, forwardRef } from "react"
 
 // Components ==============================================
 import { TooltipProvider } from "@components/molecules/Tooltip/Tooltip.jsx"
@@ -34,16 +34,15 @@ const useSidebar = () => {
  *
  * @returns {JSX.Element} component - Component JSX.
  */
-const SidebarProvider = ({
+const SidebarProvider = forwardRef(({
    defaultOpen = true,
    open: openProp,
    onOpenChange: setOpenProp,
    className,
    style,
    children,
-   ref,
    ...props
-}) => {
+}, ref) => {
    const isMobile = useIsMobile()
    const [openMobile, setOpenMobile] = useState(false)
 
@@ -104,7 +103,7 @@ const SidebarProvider = ({
    }, [state, open, setOpen, isMobile, openMobile, setOpenMobile, toggleSidebar])
 
    return (
-   <SidebarContext value={contextValue}>
+   <SidebarContext.Provider value={contextValue}>
       <TooltipProvider delayDuration={0}>
          <div
             style={{
@@ -119,9 +118,9 @@ const SidebarProvider = ({
             {children}
          </div>
       </TooltipProvider>
-   </SidebarContext>
+   </SidebarContext.Provider>
    )
-}
+})
 
 SidebarProvider.displayName = "SidebarProvider"
 

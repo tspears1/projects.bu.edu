@@ -20,20 +20,7 @@ export default function () {
          extensions: [".jsx"],
          options: {
             minify: isProduction,
-            bundle: true,
          },
-         esm: {
-            dev: !isProduction,
-            deps: {
-               "react": "https://esm.sh/v135/react@19.0.0",
-               "react/": "https://esm.sh/v135/react@19.0.0/",
-               "@radix-ui/react-slot": "https://esm.sh/v135/react@19.0.0",
-               "@radix-ui/react-tooltip": "https://esm.sh/v135/react@19.0.0",
-               "@radix-ui/react-context": "https://esm.sh/v135/react@19.0.0",
-               "react-dom": "https://esm.sh/v135/*react-dom@19.0.0",
-               "react-dom/": "https://esm.sh/v135/*react-dom@19.0.0/",
-            }
-         }
       }));
 
       site.use(basePath({

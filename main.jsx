@@ -1,5 +1,5 @@
 // React ============================================
-import ReactDOMClient from 'npm:react-dom/client'
+import ReactDOMClient from 'react-dom/client'
 
 // Components ============================================
 import App from './app/js/App.jsx'

@@ -1,7 +1,5 @@
 import { useEffect } from "react"
 import { useDatabase } from '@context/database/database-context.jsx'
-import { Button } from '@components/atoms/Button/Button.jsx'
-import { Horse } from '@phosphor-icons/react/dist/ssr'
 /**
  * @component Header - Main application component.
  *
