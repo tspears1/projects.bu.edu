@@ -1,3 +1,5 @@
+"use client"
+
 // Radix UI ==================================================
 import * as TooltipPrimitive from "@radix-ui/react-tooltip"
 import { forwardRef } from 'react'

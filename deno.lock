@@ -33,7 +33,6 @@
     "npm:@types/estree@1.0.6": "1.0.6",
     "npm:@types/node@*": "22.5.4",
     "npm:@types/react@*": "19.0.2",
-    "npm:classnames@^2.5.1": "2.5.1",
     "npm:estree-walker@3.0.3": "3.0.3",
     "npm:markdown-it-attrs@4.3.0": "4.3.0_markdown-it@14.1.0",
     "npm:markdown-it-deflist@3.0.0": "3.0.0",
@@ -158,9 +157,6 @@
     "argparse@2.0.1": {
       "integrity": "sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q=="
     },
-    "classnames@2.5.1": {
-      "integrity": "sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow=="
-    },
     "csstype@3.1.3": {
       "integrity": "sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw=="
     },
@@ -247,6 +243,7 @@
   "redirects": {
     "https://esm.sh/v128/@types/react@~18.3/index.d.ts": "https://esm.sh/v128/@types/react@18.2.38/index.d.ts",
     "https://esm.sh/v128/@types/react@~18.3/jsx-runtime~.d.ts": "https://esm.sh/v128/@types/react@18.2.38/jsx-runtime~.d.ts",
+    "https://esm.sh/v135/@radix-ui/react-separator": "https://esm.sh/v135/@radix-ui/react-separator@1.1.1",
     "https://esm.sh/v135/@types/react-dom@~18.3/client~.d.ts": "https://esm.sh/v135/@types/react-dom@18.3.5/client~.d.ts",
     "https://esm.sh/v135/@types/react-dom@~18.3/index.d.ts": "https://esm.sh/v135/@types/react-dom@18.3.5/index.d.ts",
     "https://esm.sh/v135/@types/react@18.3.1/jsx-runtime": "https://esm.sh/v135/@types/react@18.3.1/jsx-runtime~.d.ts",
@@ -490,6 +487,7 @@
     "https://deno.land/x/vento@v1.12.13/src/loader.ts": "c05add67f582e937ee611852075ce2cc038b5e80e3e609eef96fa5ed74a5086c",
     "https://deno.land/x/vento@v1.12.13/src/tokenizer.ts": "127ddad02054f63b8b646e4dfbf555e1e34e9b8dcbd58d86b3729a4de95abd27",
     "https://deno.land/x/vento@v1.12.13/src/transformer.ts": "1dd0fb9c2a14bc8384b2dc557ab1131b2f9728cdbe1c47ac35bc3bd3b0ba4d47",
+    "https://esm.sh/stable/react@18.2.0/denonext/react.mjs": "3c4f23bcfc53b256fcfaf6f834fa9f584c3bb7be667b2682c6cb6ba8ef88f8e6",
     "https://esm.sh/stable/react@18.3.1/denonext/jsx-runtime.js": "5ff1e02a3bb5c69dd3535d77054b182f1ea51c5eeaf24a396984f6b7012c2716",
     "https://esm.sh/stable/react@18.3.1/denonext/react.mjs": "fc048ffc55366baf7669519127d186761db72046e2bebf35fe8d0de3964defa3",
     "https://esm.sh/stable/react@19.0.0/denonext/jsx-runtime.js": "b60fc6a59897795785e5a27d4669610ff8dc30edf47f503751a12c8b71599e01",
@@ -3523,6 +3521,8 @@
     "https://esm.sh/v135/*@phosphor-icons/react@2.1.7/dist/ssr/Yarn": "f02eca3f27037ea2b800e94fffc33aa4dec90968b03f6603320b65d031e43297",
     "https://esm.sh/v135/*@phosphor-icons/react@2.1.7/dist/ssr/YinYang": "a36bfbe857c7ff21c9de350685eb74cd9d46801239d9c8e8489014af4d18cfe8",
     "https://esm.sh/v135/*@phosphor-icons/react@2.1.7/dist/ssr/YoutubeLogo": "87ba4a70f8518dff5c5df0b5cd8bd934b439a71a63f026e3c10fe840914ad8bd",
+    "https://esm.sh/v135/*@radix-ui/react-dialog@1.1.4": "39e4151d439395c39e6fa7125ab0daa56f37407f3a7a50a85526e05a4f0ae47b",
+    "https://esm.sh/v135/*@radix-ui/react-separator@1.1.1": "259cee756f17468413284f83135068984725a97a085f3fedbeacd48278cd7f71",
     "https://esm.sh/v135/*@radix-ui/react-slot@1.1.1": "426c6e854601a14e05d227ee4bf149798e019879d6ae21ef46fc46c1d6867e7e",
     "https://esm.sh/v135/*@radix-ui/react-tooltip@1.1.6": "da1f39ca8d7ee69cb117fd693f825b931245d092f1e860a65d5b16cf2c2b46ec",
     "https://esm.sh/v135/@floating-ui/core@1.6.7/denonext/core.mjs": "3fd3d87992d7f64333b1a323fa1d7f2107e8264462b698727ed916370dd19b09",
@@ -6567,8 +6567,13 @@
     "https://esm.sh/v135/@radix-ui/react-compose-refs@1.1.1/denonext/react-compose-refs.mjs": "bca6c31e529cc7c1bd3c786c36e95e357f5f46e03145f75a962ab9457fa77ea0",
     "https://esm.sh/v135/@radix-ui/react-context@1.1.1": "d9bf5ec1a28cbae66fc791865d12413a82446772fe3aeef1c92b78f22eced3f6",
     "https://esm.sh/v135/@radix-ui/react-context@1.1.1/denonext/react-context.mjs": "81b75b3625dd5b7f9fa2fc92064567d204bdf22f3ac780a7731586576ebf2513",
+    "https://esm.sh/v135/@radix-ui/react-dialog@1.1.4/X-ZS8q/denonext/react-dialog.mjs": "5eabaa189c7cfeefa97caa5445561e62575a9e22602c51f80d69d5430183b9a9",
     "https://esm.sh/v135/@radix-ui/react-dismissable-layer@1.1.3": "75dee994f6febd5ccf9e2ea67bc45fd91948cc0e6de7b04d8a1bd55f6f034569",
     "https://esm.sh/v135/@radix-ui/react-dismissable-layer@1.1.3/denonext/react-dismissable-layer.mjs": "bcfaf22fc6030783f37da1a8b712aaee6b4b5323ff40c62d024ba48ed001b97c",
+    "https://esm.sh/v135/@radix-ui/react-focus-guards@1.1.1": "1471bd7c3246b06942f8a122cb9bed510f89a8afec46f50a75387757b152ded0",
+    "https://esm.sh/v135/@radix-ui/react-focus-guards@1.1.1/denonext/react-focus-guards.mjs": "0fa84b698602bd133e286dc77f35e0b2b1acc8c6fc5d96ff046c6b01aed33b34",
+    "https://esm.sh/v135/@radix-ui/react-focus-scope@1.1.1": "e7aa341840465ddb4bc3634d27f662a7f3eab560558de04b67b3be588b72eb9c",
+    "https://esm.sh/v135/@radix-ui/react-focus-scope@1.1.1/denonext/react-focus-scope.mjs": "1a3c67145e5d279eaab2f660ff9193a9e12c4cbe12009e7e3cd9247a1b8a85ec",
     "https://esm.sh/v135/@radix-ui/react-id@1.1.0": "9f499602844c740d69e4eb5058f63d0564b84257ab933a8266861ac6f8545d9e",
     "https://esm.sh/v135/@radix-ui/react-id@1.1.0/denonext/react-id.mjs": "37f370ec99ff386fcdd14ca9f372dd8ac590380f96ef84eb1d930dd0baea6b23",
     "https://esm.sh/v135/@radix-ui/react-popper@1.2.1": "721069478406537532d11de4ac5148af1453240824283012d2ec3e3f1c2e3ca2",
@@ -6579,6 +6584,9 @@
     "https://esm.sh/v135/@radix-ui/react-presence@1.1.2/denonext/react-presence.mjs": "6aaec26e8ac6b6f89c5b6c5a6280feea2864424e3f7ee3a8cafd19abee9ee490",
     "https://esm.sh/v135/@radix-ui/react-primitive@2.0.1": "966a6b6bbd30593224f3826f746a10d93004928ca2c27bf0c08ffe6297adcd5c",
     "https://esm.sh/v135/@radix-ui/react-primitive@2.0.1/denonext/react-primitive.mjs": "d0a36160a2d6908b35f625c3f67cede7dea0243863f859ea1a163290a8f740b2",
+    "https://esm.sh/v135/@radix-ui/react-separator@1.1.1": "1a9ce75eec31968efd829d55ecc7d3c28bb574cb096c9fcd8016a6bad3373adf",
+    "https://esm.sh/v135/@radix-ui/react-separator@1.1.1/X-ZS8q/denonext/react-separator.mjs": "2f006a577d17a37c7568bc7de765c9e08a402f678735f9af25b459d5fdb66b43",
+    "https://esm.sh/v135/@radix-ui/react-separator@1.1.1/denonext/react-separator.mjs": "c76cb9147980df22091c9c5473ccb2ecdf3cbe4f5a93a6984c8b2a770eb2d40b",
     "https://esm.sh/v135/@radix-ui/react-slot@1.1.1": "42bdb5c55a5bb695f386dda24458e24b91b509832b66c467c4ebbbef7fdad371",
     "https://esm.sh/v135/@radix-ui/react-slot@1.1.1/X-ZS8q/denonext/react-slot.mjs": "c440488066b12b4ccbdb1315afca591e9f3d11b0637c97418a47aee8038bee2c",
     "https://esm.sh/v135/@radix-ui/react-slot@1.1.1/denonext/react-slot.mjs": "28b89ec318db4e952f92e33e223bf8e28d025715f6c643fb78e0b20302112659",
@@ -6593,6 +6601,12 @@
     "https://esm.sh/v135/@radix-ui/react-use-size@1.1.0/denonext/react-use-size.mjs": "ef8d6ba3ead3647de297d8996c1a6174ea089e1923f00d810a60cc89d85399e4",
     "https://esm.sh/v135/@radix-ui/react-visually-hidden@1.1.1": "2ffef641f91af564210f24f1ad27c2c30a4cd7bf97805b2b7e00023dcd14ce92",
     "https://esm.sh/v135/@radix-ui/react-visually-hidden@1.1.1/denonext/react-visually-hidden.mjs": "1fbbd19979f1d75aeb6103ec10a6401a5b22f014ab24660018335327bddbea48",
+    "https://esm.sh/v135/aria-hidden@1.2.4": "2c84f310b9ff9393732bafbbd85da9e7056b47a329e8f9540ef4ca5a3c446fd0",
+    "https://esm.sh/v135/aria-hidden@1.2.4/denonext/aria-hidden.mjs": "5efea4f6126a7913a2342c5466fea6214bfead4873e44f0534a7bfe69cc84372",
+    "https://esm.sh/v135/classnames@2.5.1": "050d44dc19bb36fac5b475fe8d75973d92532f5d14945e390dc01322b9ba61ff",
+    "https://esm.sh/v135/classnames@2.5.1/denonext/classnames.mjs": "9a9fac7781313e86125cd222b66df45f097d16a1c5c59df5b2b55751e0a98b4f",
+    "https://esm.sh/v135/detect-node-es@1.1.0/denonext/detect-node-es.mjs": "aafa097a5b74788a9c5012d1f64014085329b495df71bef3c38887a8048932a4",
+    "https://esm.sh/v135/get-nonce@1.0.1/denonext/get-nonce.mjs": "0c8e525925a170d669a8d39caa0c70cd005b630bc32410d88d04796ac9ffc7b5",
     "https://esm.sh/v135/react-dom@18.3.1": "8ce1b3c896918d0e6ccbe49775ca04866aba2fe0e8d2728bdbeb91faf60779b7",
     "https://esm.sh/v135/react-dom@18.3.1/client": "3e23a449c16029111f8fa64809dd83ea5f896a4065f956b6b6d87998854efa1e",
     "https://esm.sh/v135/react-dom@18.3.1/denonext/client.js": "51910a60c05a5614b9dbec634d8594f74a4300fed2023dbdf1f8ea2a41a82b96",
@@ -6600,6 +6614,18 @@
     "https://esm.sh/v135/react-dom@18.3.1/denonext/server.js": "b4db56f16b45002b5e9b127a9938ab45b12f39825161dffe875920510c524878",
     "https://esm.sh/v135/react-dom@18.3.1/server": "90e374c5323303d5315c780b19e5d6297ec5a569f9cee1df28ee1030dd23af9c",
     "https://esm.sh/v135/react-dom@19.0.0/denonext/react-dom.mjs": "3262c3da7f62fa7534fda2648ac36387de6275cd1e9ef8c825cbe183dfdedb92",
+    "https://esm.sh/v135/react-remove-scroll-bar@2.3.8/denonext/constants.js": "d4349b36bf3325543472ea9ae4f6595426df44164918f8367028e67a658e257a",
+    "https://esm.sh/v135/react-remove-scroll-bar@2.3.8/denonext/react-remove-scroll-bar.mjs": "d279c3fa643c3875777bdfd2cfec161b9c101b8a88a436cee75de0bc940c42d3",
+    "https://esm.sh/v135/react-remove-scroll@2.6.2": "a47bfe3da8877d59a25463f0be4e9d60d17b825736036a6add3cb9bc1089b24d",
+    "https://esm.sh/v135/react-remove-scroll@2.6.2/denonext/dist/es2015/Combination.js": "40f6ab3e844c76708015d5dc263bc6579a9e81fa65ae077453bdb4447c288d96",
+    "https://esm.sh/v135/react-remove-scroll@2.6.2/denonext/dist/es2015/SideEffect.js": "b584a499653fd34f6449fde455b22d74b42edf134074b8f43d8993bbc4976229",
+    "https://esm.sh/v135/react-remove-scroll@2.6.2/denonext/dist/es2015/UI.js": "810beb6e9d8d70d06559d13491edbc1621c4b978fd317aadb3de076324c73e87",
+    "https://esm.sh/v135/react-remove-scroll@2.6.2/denonext/dist/es2015/aggresiveCapture.js": "6e0897d58964edbb745b1bc4bb7e641cd5dbaab5198a2068852fa1098867d0a0",
+    "https://esm.sh/v135/react-remove-scroll@2.6.2/denonext/dist/es2015/handleScroll.js": "e954590618ebdb7d75bc79c9d2fc69c8405a28414cd5cd3b2e6fb8331313e5e8",
+    "https://esm.sh/v135/react-remove-scroll@2.6.2/denonext/dist/es2015/medium.js": "da9d032dfea7a953cf8b3a1494250b4e1313670a85760c215879a85d964e19ef",
+    "https://esm.sh/v135/react-remove-scroll@2.6.2/denonext/dist/es2015/sidecar.js": "60b333cabc066666afe6e9c3b5c4b30b320487a87de8dfdf29cfdefa867e5258",
+    "https://esm.sh/v135/react-remove-scroll@2.6.2/denonext/react-remove-scroll.mjs": "5c4c4dcecadee84343329fde164897f77ad6472cc8cf4dec2d46c9fe73433d90",
+    "https://esm.sh/v135/react-style-singleton@2.2.3/denonext/react-style-singleton.mjs": "4075ca3d5962392e967af341055097cd49fcb2226b2e03791957341a1b74c969",
     "https://esm.sh/v135/react@18.3.1": "52480d4c00855e4f76843caa4f2818eb001671523740cbf064cbd108721c29c8",
     "https://esm.sh/v135/react@18.3.1/denonext/jsx-runtime.js": "5ff1e02a3bb5c69dd3535d77054b182f1ea51c5eeaf24a396984f6b7012c2716",
     "https://esm.sh/v135/react@18.3.1/denonext/react.mjs": "fc048ffc55366baf7669519127d186761db72046e2bebf35fe8d0de3964defa3",
@@ -6608,11 +6634,14 @@
     "https://esm.sh/v135/react@19.0.0/denonext/react.mjs": "79056e5ef2a1c9601ae005ce23828f148d5e47291a65c573b275e19f19fa282f",
     "https://esm.sh/v135/scheduler@0.23.2/denonext/scheduler.mjs": "dc96e5be52b14a40ce36295d938d5211e520c4da3183fe2ad4283ed103747d82",
     "https://esm.sh/v135/scheduler@0.25.0": "bfa36ac1bdf8a8a623e76bfcf26061855a630c0b80cdee1d2c61a8fc4059e641",
-    "https://esm.sh/v135/scheduler@0.25.0/denonext/scheduler.mjs": "13f3d2db7a253e7914c87b517b0163e72457577448f9d9a7acd7d75f722d419a"
+    "https://esm.sh/v135/scheduler@0.25.0/denonext/scheduler.mjs": "13f3d2db7a253e7914c87b517b0163e72457577448f9d9a7acd7d75f722d419a",
+    "https://esm.sh/v135/tslib@2.6.2/denonext/tslib.mjs": "29782bcd3139f77ec063dc5a9385c0fff4a8d0a23b6765c73d9edeb169a04bf1",
+    "https://esm.sh/v135/tslib@2.8.1/denonext/tslib.mjs": "546c1c4c1001ad9a202c60023c1b373a39c228a9d210b50451a8ba0495c38304",
+    "https://esm.sh/v135/use-callback-ref@1.3.3/denonext/use-callback-ref.mjs": "6f98c958604f2fea8e6eba7ac566f92c0c9184b6338b2ac1df82a527476cc482",
+    "https://esm.sh/v135/use-sidecar@1.1.2/denonext/use-sidecar.mjs": "833b9f916c92a833af464d685b6e2e1d89c1a6eaba11398d703f28d07d8c12ef"
   },
   "workspace": {
     "dependencies": [
-      "npm:classnames@^2.5.1",
       "npm:valtio@2.1.2"
     ]
   }

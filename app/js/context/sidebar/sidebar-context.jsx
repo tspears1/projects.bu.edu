@@ -1,5 +1,6 @@
 // React ==================================================
 import { createContext, useContext, useState, useEffect, useCallback, useMemo, forwardRef } from "react"
+import cn from 'classnames'
 
 // Components ==============================================
 import { TooltipProvider } from "@components/molecules/Tooltip/Tooltip.jsx"
@@ -38,7 +39,7 @@ const SidebarProvider = forwardRef(({
    defaultOpen = true,
    open: openProp,
    onOpenChange: setOpenProp,
-   className,
+   className = '',
    style,
    children,
    ...props
@@ -111,7 +112,10 @@ const SidebarProvider = forwardRef(({
                "--sidebar-width-icon": SIDEBAR_WIDTH_ICON,
                ...style,
             }}
-            className={`sidebar__wrapper ${className}`}
+            className={cn(
+               'sidebar__wrapper',
+               className
+            )}
             ref={ref}
             {...props}
          >
