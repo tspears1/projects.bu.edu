@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react"
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
-import { Check, CaretRight, Circle } from "@phosphor-icons/react"
+import { Icon } from "@components/atoms/Icon/Icon.jsx"
 import cn from 'classnames'
 
 const DropdownMenu = DropdownMenuPrimitive.Root
@@ -27,7 +27,7 @@ const DropdownMenuSubTrigger = forwardRef(({ inset, children, ...props }, ref) =
       {...props}
    >
       {children}
-      <CaretRight className="dropdown-menu__sub-trigger-icon" />
+      <Icon icon='caret-right' className="dropdown-menu__sub-trigger-icon" />
    </DropdownMenuPrimitive.SubTrigger>
 ))
 DropdownMenuSubTrigger.displayName = DropdownMenuPrimitive.SubTrigger.displayName
@@ -74,7 +74,7 @@ const DropdownMenuCheckboxItem = forwardRef(({ children, checked, ...props }, re
    >
       <span className='dropdown-menu__checkbox-item-span'>
          <DropdownMenuPrimitive.ItemIndicator>
-            <Check size='1rem' />
+            <Icon icon='check' size='1rem' />
          </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {children}
@@ -90,7 +90,8 @@ const DropdownMenuRadioItem = forwardRef(({ children, ...props }, ref) => (
    >
       <span className='dropdown-menu__radio-item-span'>
          <DropdownMenuPrimitive.ItemIndicator>
-            <Circle
+            <Icon
+               icon='circle'
                color="currentColor"
                size='0.5rem'
             />

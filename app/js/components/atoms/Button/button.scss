@@ -1,11 +1,7 @@
-:where(button, a, span, div):where(.button) {
-  appearance: none;
-  background: none;
-  border: 0;
-  border-radius: 0;
-  color: unset;
-  margin: 0;
-  padding: 0;
+@use '../../../../css/abstracts/mixins/button' as btn;
+
+:where(.button):where(button, a, input, span, div) {
+  @include btn.button-reset();
 }
 
 .button {

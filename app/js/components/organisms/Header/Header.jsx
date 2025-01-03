@@ -1,6 +1,9 @@
+"use client";
+
 import { useEffect } from "react";
 import { useDatabase } from "@context/database/database-context.jsx";
 import { Button } from "@components/atoms/Button/Button.jsx";
+import { Icon } from "@components/atoms/Icon/Icon.jsx";
 /**
  * @component Header - Main application component.
  *
@@ -19,6 +22,7 @@ const Header = () => {
     <header className="site-header">
       <div className="site-header__container">
         <Button>Click Me</Button>
+        <Icon icon="bird" weight='light' size={32}/>
         <div>sidebar-toggle</div>
         <div>breadcrumbs</div>
         <div>brand</div>

@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import { Slot } from "@radix-ui/react-slot";
-import { CaretRight, DotsThree } from "@phosphor-icons/react";
+import { Icon } from "@components/atoms/Icon/Icon.jsx";
 
 const Breadcrumb = forwardRef(({ ...props }, ref) => (
   <nav
@@ -62,7 +62,7 @@ const BreadcrumbSeparator = ({ children, ...props }) => (
     className="breadcrumb__separator"
     {...props}
   >
-    {children ?? <CaretRight />}
+    {children ?? <Icon icon="chevron-right" />}
   </li>
 );
 BreadcrumbSeparator.displayName = "BreadcrumbSeparator";
@@ -74,7 +74,7 @@ const BreadcrumbEllipsis = ({ ...props }) => (
     className="breadcrumb__ellipsis"
     {...props}
   >
-    <DotsThree size="1rem" />
+    <Icon icon='dots-three' size="1rem" />
     <span className="sr-only">More</span>
   </span>
 );

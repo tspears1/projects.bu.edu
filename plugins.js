@@ -21,6 +21,7 @@ export default function () {
       extensions: [".jsx"],
       options: {
         minify: isProduction,
+        bundle: true,
       },
     }));
 

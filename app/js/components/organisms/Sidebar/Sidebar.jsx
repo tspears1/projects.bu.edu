@@ -3,7 +3,7 @@ import cn from "classnames";
 
 // Components ==============================================
 import { Slot } from "@radix-ui/react-slot";
-import { SidebarSimple } from "@phosphor-icons/react";
+import { Icon } from "@components/atoms/Icon/Icon.jsx";
 import { Button } from "@components/atoms/Button/Button.jsx";
 import { Separator } from "@components/atoms/Separator/Separator.jsx";
 import {
@@ -134,7 +134,7 @@ const SidebarTrigger = forwardRef(({ className, onClick, ...props }, ref) => {
       }}
       {...props}
     >
-      <SidebarSimple />
+      <Icon icon='sidebar-simple' />
       <span className="sr-only">Toggle Sidebar</span>
     </Button>
   );

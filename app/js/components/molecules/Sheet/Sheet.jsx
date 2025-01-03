@@ -2,7 +2,7 @@
 
 import { forwardRef } from "react";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
-import { X } from "@phosphor-icons/react";
+import { Icon } from "@components/atoms/Icon/Icon.jsx";
 
 const Sheet = SheetPrimitive.Root;
 
@@ -35,12 +35,7 @@ const SheetContent = forwardRef((
     >
       {children}
       <SheetPrimitive.Close className="sheet__content-close">
-        <X
-          style={{
-            width: "1rem",
-            height: "1rem",
-          }}
-        />
+        <Icon icon='x' size='1rem' />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>
     </SheetPrimitive.Content>
