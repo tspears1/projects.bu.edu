@@ -1,9 +1,0 @@
-.icon {
-   inline-size: min(5rem, 100%);
-
-   .icon__svg {
-      block-size: 100%;
-      inline-size: 100%;
-      object-fit: contain;
-   }
-}

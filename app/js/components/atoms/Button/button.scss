@@ -1,0 +1,13 @@
+:where(button, a, span, div):where(.button) {
+  appearance: none;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  color: unset;
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  background: hotpink;
+}

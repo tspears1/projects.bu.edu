@@ -1,5 +1,5 @@
-import { Slot } from "@radix-ui/react-slot"
-import { forwardRef } from 'react'
+import { Slot } from "@radix-ui/react-slot";
+import { forwardRef } from "react";
 
 /**
  * @component Button - Main application component.
@@ -8,21 +8,22 @@ import { forwardRef } from 'react'
  *
  * @returns {JSX.Element}
  */
-const Button = forwardRef(({ variant, className = '', size = 'sm', asChild = false, ...props }, ref) => {
-   const Comp = asChild ? Slot : "button"
-   return (
+const Button = forwardRef(({ variant, className = "", size = "sm", asChild = false, ...props }, ref ) => {
+    const Comp = asChild ? Slot : "button";
+    return (
       <Comp
-         data-size={size}
-         data-variant={variant}
-         className={`button ${className}`}
-         ref={ref}
-         {...props}
+        data-size={size}
+        data-variant={variant}
+        className={`button ${className}`}
+        ref={ref}
+        {...props}
       />
-   )
-})
-Button.displayName = "Button"
+    );
+  },
+);
+Button.displayName = "Button";
 
-export { Button }
+export { Button };
 
 /**
  * @typedef {Object} ButtonProps - Button component props.

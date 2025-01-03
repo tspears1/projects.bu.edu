@@ -1,4 +1,4 @@
-import { Button } from "@components/atoms/Button/Button.jsx"
+import { Button } from "@components/atoms/Button/Button.jsx";
 
 /**
  * @component AssetCard - Main application component.
@@ -7,34 +7,37 @@ import { Button } from "@components/atoms/Button/Button.jsx"
  *
  * @returns {JSX.Element}
  */
-const AssetCard = ({ asset, className = '', ...props }) => {
+const AssetCard = ({ asset, className = "", ...props }) => {
+  const getFileType = (url, types) => {
+    if (!url) return null;
+    return types.find((fileType) => fileType.regex.test(fileUrl));
+  };
 
-   const getFileType = (url, types) => {
-      if (!url) return null
-      return types.find(fileType => fileType.regex.test(fileUrl))
-   }
+  const { title, description, lastModified, fileUrl, status } = asset;
+  const { icon, label } = getFileType(fileUrl);
 
-   const { title, description, lastModified, fileUrl, status } = asset
-   const { icon, label } = getFileType(fileUrl)
+  const _lastModified = new Date(lastModified).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
 
-   const _lastModified = new Date(lastModified).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
+  return (
+    <article className={`asset-card ${className}`} {...props}>
+      <div className="asset-card__title">{title}</div>
+      <div className="asset-card__description">{description}</div>
+      <div className="asset-card__last-modified">{_lastModified}</div>
+      <Button className="asset-card__file-url" variant="icon" asChild={true}>
+        <a href={fileUrl} target="_blank" rel="noreferrer">{label}</a>
+      </Button>
+      <div className="asset-card__status">{status}</div>
+    </article>
+  );
+};
 
-   return (
-      <article className={`asset-card ${className}`} {...props}>
-         <div className="asset-card__title">{title}</div>
-         <div className="asset-card__description">{description}</div>
-         <div className="asset-card__last-modified">{_lastModified}</div>
-         <Button className='asset-card__file-url' variant='icon' asChild={true}>
-            <a href={fileUrl} target="_blank" rel="noreferrer">{ label }</a>
-         </Button>
-         <div className="asset-card__status">{status}</div>
-      </article>
-   )
-}
+AssetCard.displayName = "AssetCard";
 
-AssetCard.displayName = "AssetCard"
-
-export { AssetCard }
+export { AssetCard };
 
 /**
  * @typedef {Object} AssetCardProps - AssetCard component props.

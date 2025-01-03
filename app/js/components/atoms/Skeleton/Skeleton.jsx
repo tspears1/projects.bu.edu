@@ -1,10 +1,10 @@
-const Skeleton =({ ...props }) => {
-   return (
-      <div
-         className="skeleton"
-         {...props}
-      />
-   )
-}
+const Skeleton = ({ ...props }) => {
+  return (
+    <div
+      className="skeleton"
+      {...props}
+    />
+  );
+};
 
-export { Skeleton }
+export { Skeleton };

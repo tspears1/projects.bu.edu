@@ -15,16 +15,18 @@
   - spint sort: oldest, newest
 
 ## state
- - theme
- - list/grid preference
- - sort: oldest, newest
- - sidebar open/close
+
+- theme
+- list/grid preference
+- sort: oldest, newest
+- sidebar open/close
 
 ## localStorage
- - theme
- - list/grid preference
- - sort: oldest, newest
- - sidebar open/close
+
+- theme
+- list/grid preference
+- sort: oldest, newest
+- sidebar open/close
 
 ## index/
 

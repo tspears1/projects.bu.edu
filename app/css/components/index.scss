@@ -1,0 +1,18 @@
+@use 'sass:meta';
+@layer atoms, molecules, organisms;
+
+@layer atoms {
+   @layer brand { @include meta.load-css('../../js/components/atoms/Brand/brand'); }
+
+   @layer button { @include meta.load-css('../../js/components/atoms/Button/button'); }
+
+   @layer icon { @include meta.load-css('../../js/components/atoms/Icon/icon'); }
+
+   @layer separator { @include meta.load-css('../../js/components/atoms/Separator/separator'); }
+
+   @layer sidebar-toggle { @include meta.load-css('../../js/components/atoms/SidebarToggle/sidebar-toggle'); }
+
+   @layer skeleton { @include meta.load-css('../../js/components/atoms/Skeleton/skeleton'); }
+
+   @layer theme-toggle { @include meta.load-css('../../js/components/atoms/ThemeToggle/theme-toggle'); }
+}

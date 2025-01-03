@@ -1,5 +1,6 @@
-import { useEffect } from "react"
-import { useDatabase } from '@context/database/database-context.jsx'
+import { useEffect } from "react";
+import { useDatabase } from "@context/database/database-context.jsx";
+import { Button } from "@components/atoms/Button/Button.jsx";
 /**
  * @component Header - Main application component.
  *
@@ -8,22 +9,23 @@ import { useDatabase } from '@context/database/database-context.jsx'
  * @returns {JSX.Element}
  */
 const Header = () => {
-   const { sprints } = useDatabase()
+  const { sprints } = useDatabase();
 
-   useEffect(() => {
-      console.log('db', sprints)
-   }, [sprints])
+  useEffect(() => {
+    console.log("db", sprints);
+  }, [sprints]);
 
-   return (
-      <header className='site-header'>
-         <div className='site-header__container'>
-            <div>sidebar-toggle</div>
-            <div>breadcrumbs</div>
-            <div>brand</div>
-            <div>theme-toggle</div>
-         </div>
-      </header>
-   )
-}
+  return (
+    <header className="site-header">
+      <div className="site-header__container">
+        <Button>Click Me</Button>
+        <div>sidebar-toggle</div>
+        <div>breadcrumbs</div>
+        <div>brand</div>
+        <div>theme-toggle</div>
+      </div>
+    </header>
+  );
+};
 
-export default Header
+export default Header;

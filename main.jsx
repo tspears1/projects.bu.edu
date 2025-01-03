@@ -1,15 +1,15 @@
 // React ============================================
-import ReactDOMClient from 'react-dom/client'
+import ReactDOMClient from "react-dom/client";
 
 // Components ============================================
-import App from './app/js/App.jsx'
+import App from "./app/js/App.jsx";
 
 // Render ============================================
 const render = () => {
-   ReactDOMClient.hydrateRoot(
-      document.getElementById('_root'),
-      <App />
-   )
-}
+  ReactDOMClient.hydrateRoot(
+    document.getElementById("_root"),
+    <App />,
+  );
+};
 
-render()
+render();
