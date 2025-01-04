@@ -1,10 +1,11 @@
 .icon {
   aspect-ratio: var(--icon-ratio, auto);
   block-size: var(--icon-size, auto);
-  inline-size: var(--icon-size, min(5rem, 100%));
+  inline-size: var(--icon-size, auto);
 
   .icon__svg {
     block-size: 100%;
+    color: var(--icon-color, currentColor);
     inline-size: 100%;
     object-fit: contain;
   }

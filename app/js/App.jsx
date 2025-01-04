@@ -2,7 +2,7 @@
 import ContextProviders from "@components/organisms/ContextProviders/ContextProviders.jsx";
 import Header from "@components/organisms/Header/Header.jsx";
 import { AppSidebar } from "@components/organisms/AppSidebar/AppSidebar.jsx";
-import { SidebarInset } from "@components/organisms/Sidebar/Sidebar.jsx";
+import { SidebarInset } from "./components/ui/Sidebar/Sidebar.jsx";
 
 /**
  * @component App - Main application component.

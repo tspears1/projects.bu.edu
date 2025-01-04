@@ -11,7 +11,7 @@ import {
 import cn from "classnames";
 
 // Components ==============================================
-import { TooltipProvider } from "@components/molecules/Tooltip/Tooltip.jsx";
+import { TooltipProvider } from "@components/ui/Tooltip/Tooltip.jsx";
 
 // Hooks ==================================================
 import useIsMobile from "@hooks/use-mobile.jsx";

@@ -4,14 +4,14 @@ import cn from "classnames";
 // Components ==============================================
 import { Slot } from "@radix-ui/react-slot";
 import { Icon } from "@components/atoms/Icon/Icon.jsx";
-import { Button } from "@components/atoms/Button/Button.jsx";
-import { Separator } from "@components/atoms/Separator/Separator.jsx";
+import { Button } from "@components/ui/Button/Button.jsx";
+import { Separator } from "@components/ui/Separator/Separator.jsx";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@components/molecules/Tooltip/Tooltip.jsx";
-import { Skeleton } from "@components/atoms/Skeleton/Skeleton.jsx";
+} from "@components/ui/Tooltip/Tooltip.jsx";
+import { Skeleton } from "@components/ui/Skeleton/Skeleton.jsx";
 
 // Constants ==============================================
 import { SIDEBAR_WIDTH_MOBILE } from "@constants/sidebar-contants.js";

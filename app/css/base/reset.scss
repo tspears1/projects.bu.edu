@@ -90,7 +90,7 @@ pre {
 }
 
 :where(svg:not([width])) {
-  max-inline-size: var(--size-10);
+  max-inline-size: var(--size-10, 6rem);
 }
 
 ::placeholder {

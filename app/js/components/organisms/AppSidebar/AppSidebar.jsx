@@ -6,7 +6,7 @@ import {
    SidebarFooter,
    SidebarHeader,
    SidebarRail
-} from "@components/organisms/Sidebar/Sidebar.jsx"
+} from "../../ui/Sidebar/Sidebar.jsx"
 import { ProjectSwitcher } from "@components/molecules/ProjectSwitcher/ProjectSwitcher.jsx";
 import { NavPhases } from "@components/molecules/NavPhases/NavPhases.jsx";
 

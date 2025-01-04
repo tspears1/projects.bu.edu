@@ -2,10 +2,10 @@
 
 import { useEffect } from "react";
 import { useDatabase } from "@context/database/database-context.jsx";
-import { Button } from "@components/atoms/Button/Button.jsx";
+import { Button } from "@components/ui/Button/Button.jsx";
 import { Icon } from "@components/atoms/Icon/Icon.jsx";
-import { SidebarTrigger } from "@components/organisms/Sidebar/Sidebar.jsx";
-import { Breadcrumb, BreadcrumbList, BreadcrumbItem } from "@components/molecules/Breadcrumbs/Breadcrumbs.jsx";
+import { SidebarTrigger } from "../../ui/Sidebar/Sidebar.jsx";
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem } from "@components/ui/Breadcrumbs/Breadcrumbs.jsx";
 /**
  * @component Header - Main application component.
  *
@@ -23,8 +23,9 @@ const Header = () => {
   return (
     <header className="site-header">
       <div className="site-header__container">
-        <Button>Click Me</Button>
-        <Icon icon="bird" weight='duotone' size={32} color='midnightblue'/>
+        <Button variant="ghost" size="icon">
+          <Icon icon="bird" weight='light' color='honeydew'/>
+        </Button>
         <SidebarTrigger />
         <Breadcrumb>
           <BreadcrumbList>

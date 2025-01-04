@@ -9,5 +9,6 @@
 }
 
 .site-header {
-  background: #ddd;
+  background: hsl(var(--color-primary));
+  color: hsl(var(--color-primary-foreground));
 }
