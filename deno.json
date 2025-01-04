@@ -6,8 +6,6 @@
     "@hooks/": "./app/js/hooks/",
     "lume/cms/": "https://cdn.jsdelivr.net/gh/lumeland/cms@v0.8.1/",
     "lume/": "https://deno.land/x/lume@v2.4.3/",
-    "@phosphor-icons/core": "https://esm.sh/v135/@phosphor-icons/core@2.1.1",
-    "@phosphor-icons/core/": "https://esm.sh/v135/@phosphor-icons/core@2.1.1/",
     "@radix-ui/": "https://esm.sh/v135/@radix-ui/",
     "@radix-ui/react-dialog": "https://esm.sh/v135/*@radix-ui/react-dialog@1.1.4",
     "@radix-ui/react-dropdown-menu": "https://esm.sh/v135/*@radix-ui/react-dropdown-menu@2.1.4",

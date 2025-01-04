@@ -127,7 +127,7 @@ const SidebarTrigger = forwardRef(({ className, onClick, ...props }, ref) => {
       data-sidebar="trigger"
       variant="ghost"
       size="icon"
-      className={cn("h-7 w-7", className)}
+      className={cn("sidebar__trigger", className)}
       onClick={(event) => {
         onClick?.(event);
         toggleSidebar();

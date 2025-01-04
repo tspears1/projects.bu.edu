@@ -1,5 +1,7 @@
 .icon {
-  inline-size: min(5rem, 100%);
+  aspect-ratio: var(--icon-ratio, auto);
+  block-size: var(--icon-size, auto);
+  inline-size: var(--icon-size, min(5rem, 100%));
 
   .icon__svg {
     block-size: 100%;

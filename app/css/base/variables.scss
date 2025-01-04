@@ -1,3 +1,142 @@
 :root {
-  --sl-font-sans: lexend;
+  /* Aspect Ratios ------------------------------------------------------ */
+    --ratio-square:             1;          // 1
+    --ratio-photo:              1.333;      // 4/3
+    --ratio-film:               1.5;        // 3/2
+    --ratio-widescreen:         1.778;      // 16/9
+    --ratio-univisum:           2;          // 2/1
+    --ratio-panorama:           4;          // 4/1
+
+    --ratio-photo-y:            0.75;       // 3/4
+    --ratio-film-y:             0.667;      // 2/3
+    --ratio-widescreen-y:       0.5625;     // 9/16
+    --ratio-univisum-y:         0.5;        // 1/2
+    --ratio-panorama-y:         0.25;       // 1/4
+
+  /* Border Widths ----------------------------------------------------- */
+  --border-size-1:            1px;
+  --border-size-2:            2px;
+  --border-size-3:            5px;
+  --border-size-4:            10px;
+  --border-size-5:            25px;
+
+  /* Border Radii ------------------------------------------------------ */
+  --radius-none:              0;
+  --radius-1:                 0.125rem;
+  --radius-2:                 0.25rem;
+  --radius-3:                 0.5rem;
+  --radius-4:                 1rem;
+  --radius-5:                 2rem;
+  --radius-6:                 4rem;
+  --radius-7:                 8rem;
+  --radius-round:             1e5px;
+
+  /* Font Families ------------------------------------------------------ */
+  --font-sans:    Arial, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  --font-serif:   ui-serif, serif;
+  --font-mono:    Fliege mono, Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;
+
+  /* Font Weights ------------------------------------------------------ */
+  --font-weight-light:            300;
+  --font-weight-regular:          400;
+  --font-weight-medium:           500;
+  --font-weight-semibold:         600;
+  --font-weight-bold:             700;
+  --font-weight-black:            900;
+
+  /* Line Heights ------------------------------------------------------ */
+  --leading-none:                 1;
+  --leading-tight:                1.125;
+  --leading-snug:                 1.375;
+  --leading-normal:               1.5;
+  --leading-relaxed:              1.625;
+  --leading-loose:                2;
+
+  --leading-header:               var(--leading-tight);
+  --leading-paragraph:            var(--leading-loose);
+
+  /* Letter Spacing ---------------------------------------------------- */
+  --tracking-tighter:             -0.05em;
+  --tracking-tight:               -0.025em;
+  --tracking-normal:              0em;
+  --tracking-wide:                0.025em;
+  --tracking-wider:               0.05em;
+  --tracking-widest:              0.1em;
+
+  /* Transition Duration ------------------------------------------------------ */
+  --duration-quick:           150ms;
+  --duration-fast:            300ms;
+  --duration-moderate:        500ms;
+  --duration-slow:            750ms;
+  --duration-gentle:          1200ms;
+  --duration-adagio:          1600ms;
+  --duration-largo:           2000ms;
+  --duration-grave:           2500ms;
+
+  /* Easing Functions ------------------------------------------------------ */
+  /* Based on https://easings.net/ ------------------ */
+  --ease-in-quad:             cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --ease-in-cubic:            cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --ease-in-quart:            cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --ease-in-quint:            cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  --ease-in-expo:             cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --ease-in-circ:             cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  --ease-in-back:             cubic-bezier(0.36, 0, 0.66, -0.56);
+  --ease-out-quad:            cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-cubic:           cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-out-quart:           cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-out-quint:           cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out-expo:            cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-out-circ:            cubic-bezier(0.075, 0.82, 0.165, 1);
+  --ease-out-back:            cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-in-out-quad:         cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --ease-in-out-cubic:        cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ease-in-out-quart:        cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-in-out-quint:        cubic-bezier(0.86, 0, 0.07, 1);
+  --ease-in-out-expo:         cubic-bezier(1, 0, 0, 1);
+  --ease-in-out-circ:         cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  --ease-in-out-back:         cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+  --ease-in:                  var(--ease-in-cubic);
+  --ease-out:                 var(--ease-out-cubic);
+  --ease-in-out:              var(--ease-in-out-cubic);
+
+  /* Spacing Scale ------------------------------------------------------ */
+  --size-0:            0.5rem;     // 8px
+  --size-1:            1rem;       // 16px
+  --size-2:            1.5rem;     // 24px
+  --size-3:            2rem;       // 32px
+  --size-4:            2.5rem;     // 40px
+  --size-5:            3rem;       // 48px
+  --size-6:            3.5rem;     // 56px
+  --size-7:            4rem;       // 64px
+  --size-8:            4.5rem;     // 72px
+  --size-9:            5rem;       // 80px
+  --size-10:           6rem;       // 96px
+
+  /* Fluids Spacing Scale ------------------------------------------------------ */
+  /* Sets clamp base on xs and xl breakpoints ---------- */
+  --size-fluid-1:      clamp(.5rem, 1vw, 1rem);        // 8px - 16px
+  --size-fluid-2:      clamp(1rem, 2vw, 1.5rem);       // 16px - 24px
+  --size-fluid-3:      clamp(1.5rem, 3vw, 2rem);       // 24px - 32px
+  --size-fluid-4:      clamp(2rem, 4vw, 3rem);         // 32px - 48px
+  --size-fluid-5:      clamp(4rem, 5vw, 5rem);         // 64px - 80px
+  --size-fluid-6:      clamp(5rem, 7vw, 7.5rem);       // 80px - 120px
+  --size-fluid-7:      clamp(7.5rem, 10vw, 10rem);     // 120px - 160px
+  --size-fluid-8:      clamp(10rem, 20vw, 15rem);      // 160px - 240px
+  --size-fluid-9:      clamp(15rem, 30vw, 20rem);      // 240px - 320px
+  --size-fluid-10:     clamp(20rem, 40vw, 30rem);      // 320px - 480px
+}
+
+:root {
+  @media (prefers-reduced-motion: reduce) {
+    --duration-quick:       0;
+    --duration-fast:        0;
+    --duration-moderate:    0;
+    --duration-slow:        0;
+    --duration-gentle:      0;
+    --duration-adagio:      0;
+    --duration-largo:       0;
+    --duration-grave:       0;
+  }
 }

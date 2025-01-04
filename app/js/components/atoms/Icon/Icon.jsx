@@ -2,7 +2,7 @@ import SvgIcon from 'react-inlinesvg'
 
 /**
  * Icon Component
- * Dynamically renders an icon from the @phosphor-icons/react package.
+ * Dynamically renders an icon from the @phosphor-icons/core package.
  *
  * @param {Object} props - Icon component props.
  * @param {string} props.name - Icon name.
@@ -17,7 +17,7 @@ const Icon = ({ icon = null, size = "1rem", weight = 'regular', className = "", 
    return (
       <div
          className={`icon icon--${icon} ${className}`}
-         style={{ '--icon-size': iconSize }}
+         style={{ '--icon-size': iconSize, '--icon-ratio': 'var(--ratio-square)' }}
       >
          <SvgIcon
             src={`https://cdn.jsdelivr.net/npm/@phosphor-icons/core@2.1.1/assets/${weight}/${iconName}`}
