@@ -1,40 +1,70 @@
+@use '../abstracts/config/breakpoints' as mq;
+@use '../abstracts/mixins/breakpoints' as mq-mix;
+
+:root {
+  /* Breakpoints ------------------------------------------------------ */
+  /* Generate CSS Variables for all SASS breakpoint variables in five formats: */
+  /* Breakpoint Widths:            --breakpoint-[name]:          XXpx          */
+  /* Breakpoint Gaps:              --breakpoint-[name]-gap:      XXpx          */
+  /* Active Breakpoint Min-Width:  --breakpoint-min-width:       XXpx          */
+  /* Active Breakpoint Max-Width:  --breakpoint-max-width:       XXpx          */
+  /* Active Breakpoint Gap:        --breakpoint-gap:             XXpx          */
+  @include mq-mix.generate-breakpoint-widths(mq.$breakpoints);
+  @include mq-mix.generate-breakpoint-gaps(mq.$breakpoints);
+  @include mq-mix.generate-active-breakpoint-variables(mq.$breakpoints);
+}
+
 :root {
   /* Aspect Ratios ------------------------------------------------------ */
-    --ratio-square:             1;          // 1
-    --ratio-photo:              1.333;      // 4/3
-    --ratio-film:               1.5;        // 3/2
-    --ratio-widescreen:         1.778;      // 16/9
-    --ratio-univisum:           2;          // 2/1
-    --ratio-panorama:           4;          // 4/1
+  --ratio-square:             1;          // 1
+  --ratio-photo:              1.333;      // 4/3
+  --ratio-film:               1.5;        // 3/2
+  --ratio-widescreen:         1.778;      // 16/9
+  --ratio-univisum:           2;          // 2/1
+  --ratio-panorama:           4;          // 4/1
 
-    --ratio-photo-y:            0.75;       // 3/4
-    --ratio-film-y:             0.667;      // 2/3
-    --ratio-widescreen-y:       0.5625;     // 9/16
-    --ratio-univisum-y:         0.5;        // 1/2
-    --ratio-panorama-y:         0.25;       // 1/4
+  --ratio-photo-y:            0.75;       // 3/4
+  --ratio-film-y:             0.667;      // 2/3
+  --ratio-widescreen-y:       0.5625;     // 9/16
+  --ratio-univisum-y:         0.5;        // 1/2
+  --ratio-panorama-y:         0.25;       // 1/4
 
   /* Border Widths ----------------------------------------------------- */
   --border-size-1:            1px;
   --border-size-2:            2px;
-  --border-size-3:            5px;
-  --border-size-4:            10px;
-  --border-size-5:            25px;
+  --border-size-3:            4px;
+  --border-size-4:            6px;
+  --border-size-5:            8px;
+  --border-size-6:            10px;
+  --border-size-7:            12px;
+  --border-size-8:            16px;
+  --border-size-9:            24px;
+  --border-size-10:           32px;
 
   /* Border Radii ------------------------------------------------------ */
   --radius-none:              0;
   --radius-1:                 0.125rem;
   --radius-2:                 0.25rem;
-  --radius-3:                 0.5rem;
-  --radius-4:                 1rem;
-  --radius-5:                 2rem;
-  --radius-6:                 4rem;
-  --radius-7:                 8rem;
+  --radius-3:                 0.375rem;
+  --radius-4:                 0.5rem;
+  --radius-5:                 0.75rem;
+  --radius-6:                 2rem;
+  --radius-7:                 4rem;
+  --radius-8:                 8rem;
   --radius-round:             1e5px;
 
   /* Font Families ------------------------------------------------------ */
   --font-sans:    Arial, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
   --font-serif:   ui-serif, serif;
   --font-mono:    Fliege mono, Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;
+
+  /* Font Sizes ------------------------------------------------------ */
+  --font-size-xs:                 0.75rem;
+  --font-size-sm:                 0.875rem;
+  --font-size-md:                 1rem;
+  --font-size-lg:                 1.125rem;
+  --font-size-xl:                 1.25rem;
+  --font-size-2xl:                1.5rem;
 
   /* Font Weights ------------------------------------------------------ */
   --font-weight-light:            300;
@@ -56,6 +86,7 @@
   --leading-paragraph:            var(--leading-loose);
 
   /* Letter Spacing ---------------------------------------------------- */
+  --tracking-tightest:            -0.1em;
   --tracking-tighter:             -0.05em;
   --tracking-tight:               -0.025em;
   --tracking-normal:              0em;
@@ -102,7 +133,6 @@
   --ease-in-out:              var(--ease-in-out-cubic);
 
   /* Spacing Scale ------------------------------------------------------ */
-  --size-0:            0.5rem;     // 8px
   --size-1:            1rem;       // 16px
   --size-2:            1.5rem;     // 24px
   --size-3:            2rem;       // 32px
@@ -114,18 +144,38 @@
   --size-9:            5rem;       // 80px
   --size-10:           6rem;       // 96px
 
+  /* Shim Spacing Scale ------------------------------------------------------ */
+  --shim-1:             0.0625rem; // 1px
+  --shim-2:             0.125rem; // 2px
+  --shim-3:             0.25rem;  // 4px
+  --shim-4:             0.375rem; // 6px
+  --shim-5:             0.5rem;   // 8px
+  --shim-6:             0.625rem; // 10px
+  --shim-7:             0.75rem;  // 12px
+  --shim-8:             0.875rem; // 14px
+
   /* Fluids Spacing Scale ------------------------------------------------------ */
   /* Sets clamp base on xs and xl breakpoints ---------- */
-  --size-fluid-1:      clamp(.5rem, 1vw, 1rem);        // 8px - 16px
-  --size-fluid-2:      clamp(1rem, 2vw, 1.5rem);       // 16px - 24px
-  --size-fluid-3:      clamp(1.5rem, 3vw, 2rem);       // 24px - 32px
-  --size-fluid-4:      clamp(2rem, 4vw, 3rem);         // 32px - 48px
-  --size-fluid-5:      clamp(4rem, 5vw, 5rem);         // 64px - 80px
-  --size-fluid-6:      clamp(5rem, 7vw, 7.5rem);       // 80px - 120px
-  --size-fluid-7:      clamp(7.5rem, 10vw, 10rem);     // 120px - 160px
-  --size-fluid-8:      clamp(10rem, 20vw, 15rem);      // 160px - 240px
-  --size-fluid-9:      clamp(15rem, 30vw, 20rem);      // 240px - 320px
-  --size-fluid-10:     clamp(20rem, 40vw, 30rem);      // 320px - 480px
+  --size-fluid-1:      clamp(.5rem, 1vi, 1rem);        // 8px - 16px
+  --size-fluid-2:      clamp(1rem, 2vi, 1.5rem);       // 16px - 24px
+  --size-fluid-3:      clamp(1.5rem, 3vi, 2rem);       // 24px - 32px
+  --size-fluid-4:      clamp(2rem, 4vi, 3rem);         // 32px - 48px
+  --size-fluid-5:      clamp(4rem, 5vi, 5rem);         // 64px - 80px
+  --size-fluid-6:      clamp(5rem, 7vi, 7.5rem);       // 80px - 120px
+  --size-fluid-7:      clamp(7.5rem, 10vi, 10rem);     // 120px - 160px
+  --size-fluid-8:      clamp(10rem, 20vi, 15rem);      // 160px - 240px
+  --size-fluid-9:      clamp(15rem, 30vi, 20rem);      // 240px - 320px
+  --size-fluid-10:     clamp(20rem, 40vi, 30rem);      // 320px - 480px
+
+  /* Z-Index ------------------------------------------------------ */
+    --z-layer:                      1000;
+    --z-sticky:                     4000;
+    --z-drawer:                     5000;
+    --z-dialog:                     6000;
+    --z-dropdown:                   7000;
+    --z-alert:                      8000;
+    --z-tooltip:                    9000;
+    --z-max:                        9999;
 }
 
 :root {

@@ -12,12 +12,10 @@ import SvgIcon from 'react-inlinesvg'
 const Icon = ({ icon = null, size = "1rem", weight = 'regular', className = "", ...props }) => {
 
    const iconName = weight === 'regular' ? `${icon}.svg` : `${icon}-${weight}.svg`
-   const iconSize = typeof size === 'number' ? `${size}px` : size
 
    return (
       <div
          className={`icon icon--${icon} ${className}`}
-         style={{ '--icon-size': iconSize, '--icon-ratio': 'var(--ratio-square)' }}
       >
          <SvgIcon
             src={`https://cdn.jsdelivr.net/npm/@phosphor-icons/core@2.1.1/assets/${weight}/${iconName}`}

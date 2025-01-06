@@ -5,7 +5,9 @@ import { useDatabase } from "@context/database/database-context.jsx";
 import { Button } from "@components/ui/Button/Button.jsx";
 import { Icon } from "@components/atoms/Icon/Icon.jsx";
 import { SidebarTrigger } from "../../ui/Sidebar/Sidebar.jsx";
-import { Breadcrumb, BreadcrumbList, BreadcrumbItem } from "@components/ui/Breadcrumbs/Breadcrumbs.jsx";
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbSeparator } from "@components/ui/Breadcrumbs/Breadcrumbs.jsx";
+import { BreadcrumbLink } from "@components/ui/Breadcrumbs/Breadcrumbs.jsx";
+import { BreadcrumbPage } from "@components/ui/Breadcrumbs/Breadcrumbs.jsx";
 /**
  * @component Header - Main application component.
  *
@@ -29,8 +31,17 @@ const Header = () => {
         <SidebarTrigger />
         <Breadcrumb>
           <BreadcrumbList>
-            <BreadcrumbItem>Projects</BreadcrumbItem>
-            <BreadcrumbItem>Sprints</BreadcrumbItem>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="#">
+                Projects
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>
+                Sprints
+              </BreadcrumbPage>
+            </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
         <div>brand</div>

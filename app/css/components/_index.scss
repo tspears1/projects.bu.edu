@@ -2,6 +2,7 @@
 @layer ui, atoms, molecules, organisms;
 
 @layer ui {
+   @layer breadcrumbs { @include meta.load-css('../../js/components/ui/Breadcrumbs/breadcrumbs'); }
    @layer button { @include meta.load-css('../../js/components/ui/Button/button'); }
    @layer separator { @include meta.load-css('../../js/components/ui/Separator/separator'); }
    @layer sidebar { @include meta.load-css('../../js/components/ui/Sidebar/sidebar'); }

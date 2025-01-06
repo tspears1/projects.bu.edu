@@ -62,7 +62,7 @@ const BreadcrumbSeparator = ({ children, ...props }) => (
     className="breadcrumb__separator"
     {...props}
   >
-    {children ?? <Icon icon="chevron-right" />}
+    {children ?? <Icon icon="caret-right" />}
   </li>
 );
 BreadcrumbSeparator.displayName = "BreadcrumbSeparator";

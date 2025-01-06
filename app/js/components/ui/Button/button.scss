@@ -7,23 +7,23 @@
 .button {
   --_button-background-color:           var(--button-background-color, hsl(var(--color-primary)));
   --_button-background-color--hover:    var(--button-background-color--hover, hsl(var(--color-primary) / 0.8));
-  --_button-block-size:                 var(--button-block-size, 2.5rem);
+  --_button-block-size:                 var(--button-block-size, var(--size-4));
   --_button-border-color:               var(--button-border-color, hsl(var(--color-border) / 0.8));
   --_button-border-color--hover:        var(--button-border-color--hover, hsl(var(--color-border) / 0.8));
-  --_button-border-radius:              var(--button-border-radius, 0.375rem);
-  --_button-border-width:               var(--button-border-width, 0.375rem);
+  --_button-border-radius:              var(--button-border-radius, var(--radius-3));
+  --_button-border-width:               var(--button-border-width, var(--border-size-4));
   --_button-color:                      var(--button-color, hsl(var(--color-primary-foreground)));
   --_button-color--hover:               var(--button-color--hover, hsl(var(--color-primary-foreground)));
   --_button-duration:                   var(--button-duration, var(--duration-quick));
   --_button-ease:                       var(--button-ease, var(--ease-in-out));
-  --_button-font-size:                  var(--button-font-size, 0.875rem);
+  --_button-font-size:                  var(--button-font-size, var(--font-size-sm));
   --_button-font-weight:                var(--button-font-weight, var(--font-weight-semibold));
   --_button-icon-color:                 var(--button-icon-color, currentColor);
   --_button-icon-color--hover:          var(--button-icon-color--hover, currentColor);
-  --_button-icon-size:                  var(--button-icon-size, auto);
+  --_button-icon-size:                  var(--button-icon-size, 100%);
   --_button-inline-size:                var(--button-inline-size, auto);
-  --_button-padding-block:              var(--button-padding-block, 0.5rem);
-  --_button-padding-inline:             var(--button-padding-inline, 1rem);
+  --_button-padding-block:              var(--button-padding-block, var(--shim-5));
+  --_button-padding-inline:             var(--button-padding-inline, var(--size-1));
 
   align-items: center;
   background-color: hsl(var(--color-primary));
@@ -36,7 +36,7 @@
   font-weight: var(--_button-font-weight);
   inline-size: var(--_button-inline-size);
   justify-content: center;
-  max-inline-size: 20rem;
+  max-inline-size: var(--breakpoint-micro);
   outline: none;
   padding-block: var(--_button-padding-block);
   padding-inline: var(--_button-padding-inline);
@@ -74,6 +74,7 @@
     outline: none;
   }
 
+  /* variants */
   &[data-variant='destructive'] {
     --button-background-color: hsl(var(--color-destructive));
     --button-background-color--hover: hsl(var(--color-destructive) / 0.9);
@@ -93,13 +94,11 @@
       color var(--_button-duration) var(--_button-ease);
   }
 
-
   &[data-variant='secondary'] {
     --button-background-color: hsl(var(--color-secondary));
     --button-background-color--hover: hsl(var(--color-secondary) / 0.9);
     --button-color: hsl(var(--color-secondary-foreground));
   }
-
 
   &[data-variant='ghost'] {
     --button-background-color: transparent;
@@ -110,7 +109,6 @@
     align-items: center;
     display: flex;
   }
-
 
   &[data-variant='link'] {
     --button-background-color: transparent;
@@ -130,15 +128,14 @@
     }
   }
 
-
   &[data-variant='icon'] {
     --button-background-color: hsl(var(--color-foreground));
     --button-background-color--hover: hsl(var(--color-accent) / 0.8);
-    --button-block-size: 2rem;
+    --button-block-size: var(--size-3);
     --button-border-radius: var(--radius-round);
     --button-border-width: none;
     --button-color: hsl(var(--color-background));
-    --button-inline-size: 2rem;
+    --button-inline-size: var(--size-3);
     --button-padding-block: 0;
     --button-padding-inline: 0;
     align-items: center;
@@ -148,20 +145,25 @@
 
   /* sizing */
   &[data-size='sm'] {
-    --_button-block-size: 2.25rem;
-    --_button-border-radius: 0.375rem;
-    --_button-padding-inline: 0.75rem;
+    --button-block-size: calc(var(--size-4) - var(--shim-3));
+    --button-padding-inline: var(--shim-7);
   }
 
   &[data-size='lg'] {
-    --_button-block-size: 2.75rem;
-    --_button-border-radius: 0.375rem;
-    --_button-padding-inline: 2rem;
+    --button-block-size: calc(var(--size-4) + var(--shim-3));
+    --button-padding-inline: var(--size-3);
   }
 
   &[data-size='icon'] {
-    --_button-block-size: 2.5rem;
-    --_button-inline-size: 2.5rem;
+    --button-block-size: var(--size-4);
+    --button-inline-size: var(--size-4);
+    --button-padding-inline: var(--_button-padding-block);
+  }
+
+  &[data-size='icon-xl'] {
+    --button-block-size: var(--size-5);
+    --button-inline-size: var(--size-5);
+    --button-padding-inline: var(--_button-padding-block);
   }
 }
 
