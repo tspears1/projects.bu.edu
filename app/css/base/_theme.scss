@@ -1,57 +1,97 @@
 @mixin theme-light {
    color-scheme: light;
 
-   --color-accent-foreground:        var(--color-slate-100-hsl);
-   --color-accent:                   var(--color-slate-900-hsl);
-   --color-background:               var(--color-slate-900-hsl);
-   --color-border:                   var(--color-slate-200-hsl);
-   --color-card-foreground:          var(--color-mono-0-hsl);
-   --color-card:                     var(--color-slate-900-hsl);
-   --color-destructive-foreground:   var(--color-red-500-hsl);
-   --color-destructive:              var(--color-slate-50-hsl);
-   --color-foreground:               var(--color-mono-0-hsl);
-   --color-input:                    var(--color-slate-200-hsl);
-   --color-muted-foreground:         var(--color-slate-100-hsl);
-   --color-muted:                    var(--color-slate-500-hsl);
-   --color-popover-foreground:       var(--color-mono-0-hsl);
-   --color-popover:                  var(--color-slate-900-hsl);
-   --color-primary-foreground:       var(--color-slate-900-hsl);
-   --color-primary:                  var(--color-slate-50-hsl);
-   --color-ring:                     var(--color-slate-400-hsl);
-   --color-secondary-foreground:     var(--color-slate-100-hsl);
-   --color-secondary:                var(--color-slate-900-hsl);
-   --color-success-foreground:       var(--color-emerald-950-hsl);
-   --color-success:                  var(--color-emerald-50-hsl);
-   --color-warning-foreground:       var(--color-orange-950-hsl);
-   --color-warning:                  var(--color-orange-300-hsl);
+   --color-surface-0:                var(--color-mono-0-hsl);
+   --color-surface-1:                var(--color-zinc-100-hsl);
+   --color-surface-2:                var(--color-zinc-200-hsl);
+   --color-surface-3:                var(--color-zinc-300-hsl);
+   --color-surface-4:                var(--color-zinc-400-hsl);
+
+   --color-text-0:                   var(--color-mono-1000-hsl);
+   --color-text-1:                   var(--color-zinc-950-hsl);
+   --color-text-2:                   var(--color-zinc-900-hsl);
+   --color-text-3:                   var(--color-zinc-800-hsl);
+
+   --color-background:               var(--color-surface-0);
+   --color-foreground:               var(--color-text-1);
+
+   --color-card:                     var(--color-surface-0);
+   --color-card-foreground:          var(--color-text-1);
+
+   --color-popover:                  var(--color-surface-0);
+   --color-popover-foreground:       var(--color-text-1);
+
+   --color-primary:                  var(--color-zinc-900-hsl);
+   --color-primary-foreground:       var(--color-zinc-50-hsl);
+
+   --color-secondary:                var(--color-zinc-800-hsl);
+   --color-secondary-foreground:     var(--color-zinc-100-hsl);
+
+   --color-muted:                    var(--color-zinc-700-hsl);
+   --color-muted-foreground:         var(--color-zinc-200-hsl);
+
+   --color-accent:                   var(--color-blue-800-hsl);
+   --color-accent-foreground:        var(--color-blue-100-hsl);
+
+   --color-destructive:              var(--color-zinc-500-hsl);
+   --color-destructive-foreground:   var(--color-zinc-50-hsl);
+
+   --color-border:                   var(--color-surface-2);
+   --color-input:                    var(--color-surface-2);
+   --color-ring:                     var(--color-zinc-400-hsl);
+
+   --color-success:                  var(--color-emerald-950-hsl);
+   --color-success-foreground:       var(--color-emerald-50-hsl);
+   --color-warning:                  var(--color-orange-950-hsl);
+   --color-warning-foreground:       var(--color-orange-300-hsl);
 }
 
 @mixin theme-dark {
    color-scheme: dark;
 
-   --color-accent-foreground:        var(--color-slate-900-hsl);
-   --color-accent:                   var(--color-slate-100-hsl);
-   --color-background:               var(--color-mono-0-hsl);
-   --color-border:                   var(--color-slate-200-hsl);
-   --color-card-foreground:          var(--color-slate-900-hsl);
-   --color-card:                     var(--color-mono-0-hsl);
-   --color-destructive-foreground:   var(--color-slate-50-hsl);
-   --color-destructive:              var(--color-red-500-hsl);
-   --color-foreground:               var(--color-slate-900-hsl);
-   --color-input:                    var(--color-mono-0-hsl);
-   --color-muted-foreground:         var(--color-slate-500-hsl);
-   --color-muted:                    var(--color-slate-500-hsl);
-   --color-popover-foreground:       var(--color-slate-900-hsl);
-   --color-popover:                  var(--color-mono-0-hsl);
-   --color-primary-foreground:       var(--color-slate-50-hsl);
-   --color-primary:                  var(--color-slate-900-hsl);
-   --color-ring:                     var(--color-slate-400-hsl);
-   --color-secondary-foreground:     var(--color-slate-900-hsl);
-   --color-secondary:                var(--color-slate-100-hsl);
-   --color-success-foreground:       var(--color-emerald-500-hsl);
-   --color-success:                  var(--color-emerald-950-hsl);
-   --color-warning-foreground:       var(--color-orange-300-hsl);
-   --color-warning:                  var(--color-orange-950-hsl);
+   --color-surface-0:                var(--color-mono-1000-hsl);
+   --color-surface-1:                var(--color-zinc-900-hsl);
+   --color-surface-2:                var(--color-zinc-800-hsl);
+   --color-surface-3:                var(--color-zinc-700-hsl);
+   --color-surface-4:                var(--color-zinc-600-hsl);
+
+   --color-text-0:                   var(--color-mono-0-hsl);
+   --color-text-1:                   var(--color-zinc-50-hsl);
+   --color-text-2:                   var(--color-zinc-100-hsl);
+   --color-text-3:                   var(--color-zinc-200-hsl);
+
+   --color-background:               var(--color-surface-0);
+   --color-foreground:               var(--color-text-1);
+
+   --color-card:                     var(--color-surface-0);
+   --color-card-foreground:          var(--color-text-1);
+
+   --color-popover:                  var(--color-surface-0);
+   --color-popover-foreground:       var(--color-text-1);
+
+   --color-primary:                  var(--color-zinc-50-hsl);
+   --color-primary-foreground:       var(--color-zinc-900-hsl);
+
+   --color-secondary:                var(--color-zinc-100-hsl);
+   --color-secondary-foreground:     var(--color-zinc-800-hsl);
+
+   --color-muted:                    var(--color-zinc-200-hsl);
+   --color-muted-foreground:         var(--color-zinc-700-hsl);
+
+   --color-accent:                   var(--color-blue-100-hsl);
+   --color-accent-foreground:        var(--color-blue-800-hsl);
+
+   --color-destructive:              var(--color-zinc-50-hsl);
+   --color-destructive-foreground:   var(--color-zinc-500-hsl);
+
+   --color-border:                   var(--color-surface-2);
+   --color-input:                    var(--color-surface-2);
+   --color-ring:                     var(--color-zinc-600-hsl);
+
+   --color-success:                  var(--color-emerald-50-hsl);
+   --color-success-foreground:       var(--color-emerald-950-hsl);
+   --color-warning:                  var(--color-orange-300-hsl);
+   --color-warning-foreground:       var(--color-orange-950-hsl);
 }
 
 // midnightblue and honeydew

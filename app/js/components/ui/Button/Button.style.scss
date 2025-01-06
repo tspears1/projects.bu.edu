@@ -14,8 +14,8 @@
   --_button-border-width:               var(--button-border-width, var(--border-size-4));
   --_button-color:                      var(--button-color, hsl(var(--color-primary-foreground)));
   --_button-color--hover:               var(--button-color--hover, hsl(var(--color-primary-foreground)));
-  --_button-duration:                   var(--button-duration, var(--duration-quick));
-  --_button-ease:                       var(--button-ease, var(--ease-in-out));
+  --_button-duration:                   var(--button-duration, var(--duration-fast));
+  --_button-ease:                       var(--button-ease, var(--ease-3));
   --_button-font-size:                  var(--button-font-size, var(--font-size-sm));
   --_button-font-weight:                var(--button-font-weight, var(--font-weight-semibold));
   --_button-icon-color:                 var(--button-icon-color, currentColor);
@@ -26,7 +26,7 @@
   --_button-padding-inline:             var(--button-padding-inline, var(--size-1));
 
   align-items: center;
-  background-color: hsl(var(--color-primary));
+  background-color: var(--_button-background-color);
   block-size: var(--_button-block-size);
   border-radius: var(--_button-border-radius);
   border: var(--_button-border-width) solid var(--_button-border-color);
@@ -40,12 +40,10 @@
   outline: none;
   padding-block: var(--_button-padding-block);
   padding-inline: var(--_button-padding-inline);
-  transition: background-color var(--_button-duration) var(--_button-ease);
   white-space: nowrap;
 
-  .icon {
-    --icon-color: var(--_button-icon-color);
-    --icon-size: var(--_button-icon-size);
+  html:where(:not([data-theme-switching])) & {
+    transition: background-color var(--_button-duration) var(--_button-ease);
   }
 
   &:hover {
@@ -101,11 +99,13 @@
   }
 
   &[data-variant='ghost'] {
-    --button-background-color: transparent;
-    --button-background-color--hover: hsl(var(--color-primary-foreground) / 0.1);
+    --button-background-color: hsl(var(--color-foreground) / 0);
+    --button-background-color--hover: hsl(var(--color-foreground) / 0.05);
     --button-border-color: transparent;
     --button-border-color--hover: transparent;
     --button-border-width: var(--border-size-1);
+    --button-color: hsl(var(--color-foreground));
+    --button-color--hover: hsl(var(--color-foreground));
     align-items: center;
     display: flex;
   }
@@ -164,6 +164,11 @@
     --button-block-size: var(--size-5);
     --button-inline-size: var(--size-5);
     --button-padding-inline: var(--_button-padding-block);
+  }
+
+  .icon {
+    --icon-color: var(--_button-icon-color);
+    --icon-size: var(--_button-icon-size);
   }
 }
 

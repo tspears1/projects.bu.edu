@@ -1,0 +1,5 @@
+.skeleton {
+	border-radius: var(--radius-3);
+	background-color: hsl(var(--color-muted));
+	animation: pulse-animation var(--duration-quick) var(--ease-in-out) infinite;
+}

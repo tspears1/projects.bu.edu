@@ -22,17 +22,17 @@
    }
 
    &__link {
-      color: hsl(var(--color-muted-foreground));
-      transition: color var(--duration-quick) var(--ease-in-out);
+      color: hsl(var(--color-text-2) / 0.75);
+      transition: color var(--duration-fast) var(--ease-in-out);
       text-decoration: none;
 
       &:hover {
-         color: hsl(var(--color-primary-foreground) / 0.80);
+         color: hsl(var(--color-text-2) / 1);
       }
    }
 
    &__page {
-      color: hsl(var(--color-primary-foreground));
+      color: hsl(var(--color-text-1));
       font-weight: normal;
    }
 
@@ -45,6 +45,7 @@
       justify-content: center;
 
       .icon {
+         --icon-color: hsl(var(--color-text-2));
          --icon-size: var(--size-1);
       }
    }

@@ -1,4 +1,4 @@
-.site-wrapper {
+.site-inner {
   display: grid;
   grid-template-columns: var(--sidebar-width, 18.75rem) 1fr;
 }
@@ -8,7 +8,13 @@
   grid-template-columns: 1fr;
 }
 
-.site-header {
-  background: hsl(var(--color-primary));
-  color: hsl(var(--color-primary-foreground));
+.site-brand {
+  background: hsl(var(--color-surface-0));
+  border-block-end: var(--border-size-1) solid hsl(var(--color-border));
+  display: grid;
+  gap: var(--shim-8);
+  grid-auto-columns: auto;
+  grid-auto-flow: column;
+  padding: var(--size-2) var(--size-fluid-4);
+  place-content: start;
 }

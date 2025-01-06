@@ -2,17 +2,20 @@
 @layer ui, atoms, molecules, organisms;
 
 @layer ui {
-   @layer breadcrumbs { @include meta.load-css('../../js/components/ui/Breadcrumbs/breadcrumbs'); }
-   @layer button { @include meta.load-css('../../js/components/ui/Button/button'); }
-   @layer separator { @include meta.load-css('../../js/components/ui/Separator/separator'); }
-   @layer sidebar { @include meta.load-css('../../js/components/ui/Sidebar/sidebar'); }
-   @layer skeleton { @include meta.load-css('../../js/components/ui/Skeleton/skeleton'); }
-   @layer theme-toggle { @include meta.load-css('../../js/components/ui/ThemeToggle/theme-toggle'); }
-   @layer tooltip { @include meta.load-css('../../js/components/ui/Tooltip/tooltip'); }
+   @layer breadcrumbs { @include meta.load-css('../../js/components/ui/Breadcrumbs/Breadcrumbs.style.scss'); }
+   @layer button { @include meta.load-css('../../js/components/ui/Button/Button.style.scss'); }
+   @layer separator { @include meta.load-css('../../js/components/ui/Separator/Separator.style.scss'); }
+   @layer sidebar { @include meta.load-css('../../js/components/ui/Sidebar/Sidebar.style.scss'); }
+   @layer skeleton { @include meta.load-css('../../js/components/ui/Skeleton/Skeleton.style.scss'); }
+   @layer theme-toggle { @include meta.load-css('../../js/components/ui/ThemeToggle/ThemeToggle.style.scss'); }
+   @layer tooltip { @include meta.load-css('../../js/components/ui/Tooltip/Tooltip.style.scss'); }
 }
 
 @layer atoms {
-   @layer brand { @include meta.load-css('../../js/components/atoms/Brand/brand'); }
-   @layer icon { @include meta.load-css('../../js/components/atoms/Icon/icon'); }
-   @layer sidebar-toggle { @include meta.load-css('../../js/components/atoms/SidebarToggle/sidebar-toggle'); }
+   @layer brand { @include meta.load-css('../../js/components/atoms/Brand/Brand.style.scss'); }
+   @layer icon { @include meta.load-css('../../js/components/atoms/Icon/Icon.style.scss'); }
+}
+
+@layer organisms {
+   @layer header { @include meta.load-css('../../js/components/organisms/Header/Header.style.scss'); }
 }

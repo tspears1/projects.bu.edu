@@ -1,13 +1,14 @@
 "use client";
-
-import { useEffect } from "react";
-import { useDatabase } from "@context/database/database-context.jsx";
-import { Button } from "@components/ui/Button/Button.jsx";
-import { Icon } from "@components/atoms/Icon/Icon.jsx";
-import { SidebarTrigger } from "../../ui/Sidebar/Sidebar.jsx";
+// Components ===============================
+import { Brand } from "@components/atoms/Brand/Brand.jsx";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbSeparator } from "@components/ui/Breadcrumbs/Breadcrumbs.jsx";
 import { BreadcrumbLink } from "@components/ui/Breadcrumbs/Breadcrumbs.jsx";
 import { BreadcrumbPage } from "@components/ui/Breadcrumbs/Breadcrumbs.jsx";
+import { SidebarTrigger } from "@components/ui/Sidebar/Sidebar.jsx";
+import { ThemeToggle } from "@components/ui/ThemeToggle/ThemeToggle.jsx";
+import { Separator } from "@components/ui/Separator/Separator.jsx";
+
+// Header ==================================
 /**
  * @component Header - Main application component.
  *
@@ -16,19 +17,12 @@ import { BreadcrumbPage } from "@components/ui/Breadcrumbs/Breadcrumbs.jsx";
  * @returns {JSX.Element}
  */
 const Header = () => {
-  const db = useDatabase();
-
-  useEffect(() => {
-    db && console.log("db", db);
-  }, [db]);
 
   return (
-    <header className="site-header">
-      <div className="site-header__container">
-        <Button variant="ghost" size="icon">
-          <Icon icon="bird" weight='light' color='honeydew'/>
-        </Button>
+    <header className="header">
+      <div className="header__container">
         <SidebarTrigger />
+        <Separator orientation="vertical" />
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -44,8 +38,7 @@ const Header = () => {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <div>brand</div>
-        <div>theme-toggle</div>
+        <ThemeToggle />
       </div>
     </header>
   );

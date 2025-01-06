@@ -1,32 +1,35 @@
-"use client";
+"use client"
 
-import { forwardRef } from "react";
-import * as SeparatorPrimitive from "@radix-ui/react-separator";
-import cn from "classnames";
+import { forwardRef} from "react"
+import * as SeparatorPrimitive from "@radix-ui/react-separator"
+import cn from 'classnames'
 
 const Separator = forwardRef(({
-  text = "",
-  orientation = "horizontal",
-  decorative = true,
-  ...props
-}, ref) => (
-  <SeparatorPrimitive.Root
-    ref={ref}
-    decorative={decorative}
-    orientation={orientation}
-    className={cn(
-      "separator",
-      {
-        "separator--vertical": orientation === "vertical" ||
-          orientation !== "horizontal",
-      },
-      { "separator--horizontal": orientation === "horizontal" },
-    )}
-    {...props}
-  >
-    {text ? <div className={styles.SeperatorText}>{text}</div> : null}
-  </SeparatorPrimitive.Root>
-));
-Separator.displayName = SeparatorPrimitive.Root.displayName;
+    className,
+    orientation = "horizontal",
+    decorative = true,
+    ...props
+}, ref ) => {
+  if (orientation !== "horizontal" && orientation !== "vertical") {
+    orientation = "horizontal"
+  }
 
-export { Separator };
+  return (
+    <div
+      ref={ref}
+      data-decorative={decorative}
+      data-orientation={orientation}
+      className={cn(
+        "separator",
+        className,
+        { 'separator--horizontal' : orientation === 'horizontal' },
+        { 'separator--vertical' : orientation === 'vertical' },
+        { 'separator--decorative' : decorative }
+      )}
+      {...props}
+    />
+  )
+})
+Separator.displayName = SeparatorPrimitive.Root.displayName
+
+export { Separator }
