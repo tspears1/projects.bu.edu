@@ -1,6 +1,11 @@
 .site-inner {
+  --sidebar-block-size: 100%;
+  --sidebar-wrapper-position: absolute;
+
   display: grid;
-  grid-template-columns: var(--sidebar-width, 18.75rem) 1fr;
+  grid-template-columns: auto 1fr;
+  min-inline-size: 100vi;
+  position: relative;
 }
 
 .site-content {

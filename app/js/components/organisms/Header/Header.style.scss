@@ -3,6 +3,8 @@
    color: hsl(var(--color-text-1));
    padding-block: var(--shim-7);
    padding-inline: var(--shim-5);
+   position: relative;
+   z-index: var(--z-sticky);
 }
 
 .header__container{

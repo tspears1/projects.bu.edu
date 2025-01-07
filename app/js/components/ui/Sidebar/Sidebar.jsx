@@ -14,7 +14,7 @@ import {
 import { Skeleton } from "@components/ui/Skeleton/Skeleton.jsx";
 
 // Constants ==============================================
-import { SIDEBAR_WIDTH_MOBILE } from "@constants/sidebar-contants.js";
+import { SIDEBAR_INLINE_SIZE_MOBILE } from "@constants/sidebar-contants.js";
 
 // Context ==============================================
 import { useSidebar } from "@context/sidebar/sidebar-context.jsx";
@@ -70,11 +70,11 @@ const Sidebar = forwardRef(({
           data-mobile="true"
           className="sidebar__sheet"
           style={{
-            "--sidebar-width": SIDEBAR_WIDTH_MOBILE,
+            "--sidebar-inline-size": SIDEBAR_INLINE_SIZE_MOBILE,
           }}
           side={side}
         >
-          <div className="sidebar__something">{children}</div>
+          <div className="sidebar__sheet-inner">{children}</div>
         </SheetContent>
       </Sheet>
     );
@@ -83,22 +83,13 @@ const Sidebar = forwardRef(({
   return (
     <div
       ref={ref}
-      className="sidebar sidebar--collapsible"
+      className="sidebar"
       data-state={state}
       data-collapsible={state === "collapsed" ? collapsible : ""}
       data-variant={variant}
       data-side={side}
     >
-      {/* This is what handles the sidebar gap on desktop */}
-      <div
-        className={cn(
-          "sidebar__gap",
-          {
-            "sidebar__gap--extra": variant === "floating" ||
-              variant === "inset",
-          },
-        )}
-      />
+      <div className="sidebar__gap" />
       <div
         className={cn(
           "sidebar__wrapper",
@@ -440,7 +431,7 @@ const SidebarMenuSkeleton = forwardRef(
         <Skeleton
           className="sidebar__menu-skeleton-text"
           data-sidebar="menu-skeleton-text"
-          style={{ "--skeleton-width": width }}
+          style={{ "--skeleton-inline-size": width }}
         />
       </div>
     );

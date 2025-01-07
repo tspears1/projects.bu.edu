@@ -21,8 +21,8 @@ import {
   SIDEBAR_COOKIE_MAX_AGE,
   SIDEBAR_COOKIE_NAME,
   SIDEBAR_KEYBOARD_SHORTCUT,
-  SIDEBAR_WIDTH,
-  SIDEBAR_WIDTH_ICON,
+  SIDEBAR_INLINE_SIZE,
+  SIDEBAR_INLINE_SIZE_ICON,
 } from "@constants/sidebar-contants.js";
 
 // Create Context ==========================================
@@ -128,8 +128,8 @@ const SidebarProvider = forwardRef(({
       <TooltipProvider delayDuration={0}>
         <div
           style={{
-            "--sidebar-width": SIDEBAR_WIDTH,
-            "--sidebar-width-icon": SIDEBAR_WIDTH_ICON,
+            "--sidebar-inline-size": SIDEBAR_INLINE_SIZE,
+            "--sidebar-inline-size-icon": SIDEBAR_INLINE_SIZE_ICON,
             ...style,
           }}
           className={cn(

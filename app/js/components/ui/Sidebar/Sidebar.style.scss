@@ -1,0 +1,219 @@
+@use '../../../../css/abstracts/mixins/breakpoints' as mq;
+
+.sidebar {
+   --_sidebar-transition-duration:             var(--sidebar-transition-duration, var(--duration-moderate));
+   --_sidebar-transition-easing:               var(--sidebar-transition-easing, var(--ease-spring-2));
+
+   color: var(--color-sidebar-foreground);
+   display: none;
+
+   @include mq.breakpoint(sm) {
+      display: block;
+   }
+
+   &[data-collapsible='none'] {
+      background: var(--color-sidebar-background);
+      block-size: 100%;
+      color: var(--color-sidebar-foreground);
+      display: flex;
+      flex-direction: column;
+      inline-size: var(--sidebar-inline-size);
+   }
+
+   &[data-collapsible='offcanvas'] {
+      --sidebar-gap-inline-size: 0;
+   }
+
+   &[data-collapsible='icon'] {
+      --sidebar-gap-inline-size: var(--sidebar-inline-size-icon);
+      --sidebar-wrapper-inline-size: var(--sidebar-inline-size-icon);
+
+      &:where([data-variant='floating'], [data-variant='inset']) {
+         --sidebar-gap-inline-size: calc(var(--sidebar-inline-size-icon) + var(--size-1));
+         --sidebar-wrapper-inline-size: calc(var(--sidebar-inline-size-icon) + var(--size-1) + var(--shim-2));
+      }
+
+   }
+
+   &[data-state='expanded'] {
+
+   }
+
+   &[data-state='collapsed'] {
+
+   }
+
+   &[data-side='left'] {
+      --sidebar-wrapper-inline-start: 0;
+
+      &:where([data-collapsible='offcanvas']) {
+         --sidebar-wrapper-inline-start: calc(var(--sidebar-inline-size) * -1);
+      }
+
+      &:where(:not([data-variant='floating'], [data-variant='inset'])) {
+         --sidebar-wrapper-border-inline-end: var(--border-size-1) solid hsl(var(--color-border));
+      }
+   }
+
+   &[data-side='right'] {
+      --sidebar-gap-rotate: 180deg;
+      --sidebar-wrapper-inline-end: 0;
+
+      &:where([data-collapsible='offcanvas']) {
+         --sidebar-wrapper-inline-end: calc(var(--sidebar-inline-size) * -1);
+      }
+
+      &:where(:not([data-variant='floating'], [data-variant='inset'])) {
+         --sidebar-wrapper-border-inline-start: var(--border-size-1) solid hsl(var(--color-border));
+      }
+   }
+
+   &[data-variant='sidebar'] {
+
+   }
+
+   &[data-variant='floating'] {
+      --sidebar-wrapper-padding: var(--shim-5);
+   }
+
+   &[data-variant='inset'] {
+      --sidebar-wrapper-padding: var(--shim-5);
+   }
+}
+
+.sidebar__sheet {
+   background: var(--color-sidebar-background);
+   color: var(--color-sidebar-foreground);
+   inline-size: var(--sidebar-inline-size);
+   padding: 0;
+
+   & > button {
+      display: none;
+   }
+}
+
+.sidebar__sheet-inner {
+   block-size: 100%;
+   display: flex;
+   flex-direction: column;
+   inline-size: 100%;
+}
+
+.sidebar__gap {
+   background: transparent;
+   block-size: var(--sidebar-block-size, 100svh);
+   inline-size: var(--sidebar-gap-inline-size, var(--sidebar-inline-size));
+   position: relative;
+   rotate: var(--sidebar-gap-rotate, 0);
+   transition: inline-size var(--_sidebar-transition-duration) var(--_sidebar-transition-easing);
+}
+
+.sidebar__wrapper {
+   border-inline-start: var(--sidebar-wrapper-border-inline-start, none);
+   border-inline-end: var(--sidebar-wrapper-border-inline-end, none);
+   block-size: var(--sidebar-block-size, 100svh);
+   display: none;
+   inline-size: var(--sidebar-wrapper-inline-size, var(--sidebar-inline-size));
+   inset-block: 0;
+   inset-inline-start: var(--sidebar-wrapper-inline-start, auto);
+   inset-inline-end: var(--sidebar-wrapper-inline-end, auto);
+   padding: var(--sidebar-wrapper-padding, 0);
+   position: var(--sidebar-wrapper-position, fixed);
+   transition:
+      inline-size var(--_sidebar-transition-duration) var(--_sidebar-transition-easing),
+      inset-inline-end var(--_sidebar-transition-duration) var(--_sidebar-transition-easing),
+      inset-inline-start var(--_sidebar-transition-duration) var(--_sidebar-transition-easing);
+   z-index: var(--z-layer);
+
+   @include mq.breakpoint(sm) {
+      display: flex;
+   }
+}
+
+.sidebar__inner {
+
+}
+
+.sidebar__trigger {
+
+}
+
+.sidebar__rail {
+
+}
+
+.sidebar__inset {
+
+}
+
+.sidebar__input {
+
+}
+
+.sidebar__header {
+
+}
+
+.sidebar__footer {
+
+}
+
+.sidebar__separator {
+
+}
+
+.sidebar__content {
+
+}
+
+.sidebar__group {
+
+}
+
+.sidebar__group-label {
+
+}
+
+.sidebar__group-action {
+
+}
+
+.sidebar__group-content {
+
+}
+
+.sidebar__menu {
+
+}
+
+.sidebar__menu-item {
+
+}
+
+.sidebar__menu-button {
+
+}
+
+.sidebar__menu-action {
+
+}
+
+.sidebar__menu-badge {
+
+}
+
+.sidebar__menu-skeleton {
+
+}
+
+.sidebar__menu-sub {
+
+}
+
+.sidebar__menu-sub-button {
+
+}
+
+.sidebar__menu-sub-item {
+
+}

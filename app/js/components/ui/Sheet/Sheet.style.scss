@@ -128,7 +128,7 @@
 	gap: var(--shim-5);
 	text-align: center;
 
-   @include mq.breakpoint($xs) {
+   @include mq.breakpoint(xs) {
 		text-align: start;
 	}
 }
@@ -137,7 +137,7 @@
 	display: flex;
 	flex-direction: column-reverse;
 
-   @include mq.breakpoint($xs) {
+   @include mq.breakpoint(xs) {
       flex-direction: row;
       gap: var(--shim-5);
       justify-content: flex-end;
