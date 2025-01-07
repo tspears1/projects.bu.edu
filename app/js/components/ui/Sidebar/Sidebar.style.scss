@@ -145,11 +145,11 @@
 }
 
 .sidebar__inner {
-   display: flex;
-   block-size: 100%;
-   inline-size: 100%;
-   flex-direction: column;
    background-color: hsl(var(--color-sidebar-background));
+   block-size: 100%;
+   display: flex;
+   flex-direction: column;
+   inline-size: 100%;
 
    [data-variant='floating'] & {
       border: var(--border-size-1) solid hsl(var(--color-sidebar-border));
@@ -207,35 +207,74 @@
 }
 
 .sidebar__inset {
-   position: relative;
+   background-color: hsl(var(--color-sidebar-background));
    display: flex;
-   min-block-size: var(--sidebar-block-size, 100svh);
    flex: 1 1 0;
-   background-color: var
+   min-block-size: var(--sidebar-block-size, 100svh);
+   position: relative;
+
+   @include mq.breakpoint(sm) {
+      [data-variant='inset'] + & {
+         border-radius: var(--radius-5);
+         box-shadow: var(--elevation-2);
+         margin-block: var(--shim-5);
+         margin-inline: 0 var(--shim-5);
+      }
+
+      [data-state='collapsed'][data-variant='inset'] + & {
+         margin-inline-start: var(--shim-5);
+      }
+   }
+
+   [data-variant='inset'] + & {
+      min-block-size: calc(var(--sidebar-block-size, 100svh) - var(--size-1));
+   }
 }
 
 .sidebar__input {
+   background-color: hsl(var(--color-background));
+   block-size: var(--size-3);
+   box-shadow: none;
+   inline-size: 100%;
 
+   &:focus-visible {
+      box-shadow: 0 0 0 1px hsl(var(--color-sidebar-ring));
+   }
 }
 
-.sidebar__header {
-
-}
-
-.sidebar__footer {
-
+:is(.sidebar__header, .sidebar__footer) {
+   display: flex;
+   flex-direction: column;
+   gap: var(--shim-5);
+   padding: var(--shim-5);
 }
 
 .sidebar__separator {
-
+   background-color: hsl(var(--color-sidebar-border));
+   inline-size: auto;
+   margin-inline: var(--shim-5);
 }
 
 .sidebar__content {
+   display: flex;
+   flex-direction: column;
+   flex: 1 1 0;
+   gap: var(--shim-5);
+   min-block-size: 0;
+   overflow: auto;
 
+   [data-collapsible='icon'] & {
+      overflow: hidden;
+   }
 }
 
 .sidebar__group {
-
+   display: flex;
+   flex-direction: column;
+   inline-size: 100%;
+   min-inline-size: 0;
+   padding: var(--shim-5);
+   position: relative;
 }
 
 .sidebar__group-label {

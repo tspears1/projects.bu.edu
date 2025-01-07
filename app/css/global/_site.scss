@@ -1,5 +1,5 @@
 .site-inner {
-  --sidebar-block-size: 100%;
+  --sidebar-block-size: calc(100svb - var(--site-header-block-size, 0px));
   --sidebar-wrapper-position: absolute;
 
   display: grid;
@@ -11,6 +11,8 @@
 .site-content {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  min-inline-size: 100%;
 }
 
 .site-header {
@@ -23,12 +25,4 @@
   grid-template-columns: 1fr max-content;
   justify-content: space-between;
   padding: var(--size-2) var(--size-fluid-2);
-}
-
-.site-brand {
-  display: grid;
-  gap: var(--shim-8);
-  grid-auto-columns: auto;
-  grid-auto-flow: column;
-  place-content: start;
 }
