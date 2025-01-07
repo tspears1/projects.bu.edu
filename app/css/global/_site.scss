@@ -13,13 +13,22 @@
   grid-template-columns: 1fr;
 }
 
-.site-brand {
+.site-header {
+  align-items: center;
   background: hsl(var(--color-surface-0));
   border-block-end: var(--border-size-1) solid hsl(var(--color-border));
+  display: grid;
+  gap: var(--shim-5);
+  grid-auto-flow: column;
+  grid-template-columns: 1fr max-content;
+  justify-content: space-between;
+  padding: var(--size-2) var(--size-fluid-2);
+}
+
+.site-brand {
   display: grid;
   gap: var(--shim-8);
   grid-auto-columns: auto;
   grid-auto-flow: column;
-  padding: var(--size-2) var(--size-fluid-4);
   place-content: start;
 }

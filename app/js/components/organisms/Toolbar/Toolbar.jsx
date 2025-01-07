@@ -1,26 +1,24 @@
 "use client";
 // Components ===============================
-import { Brand } from "@components/atoms/Brand/Brand.jsx";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbSeparator } from "@components/ui/Breadcrumbs/Breadcrumbs.jsx";
 import { BreadcrumbLink } from "@components/ui/Breadcrumbs/Breadcrumbs.jsx";
 import { BreadcrumbPage } from "@components/ui/Breadcrumbs/Breadcrumbs.jsx";
 import { SidebarTrigger } from "@components/ui/Sidebar/Sidebar.jsx";
-import { ThemeToggle } from "@components/ui/ThemeToggle/ThemeToggle.jsx";
 import { Separator } from "@components/ui/Separator/Separator.jsx";
 
-// Header ==================================
+// Toolbar ==================================
 /**
- * @component Header - Main application component.
+ * @component Toolbar - Main application component.
  *
  * @param {Object} props - Component props.
  *
  * @returns {JSX.Element}
  */
-const Header = () => {
+const Toolbar = () => {
 
   return (
-    <header className="header">
-      <div className="header__container">
+    <header className="toolbar">
+      <div className="toolbar__container">
         <SidebarTrigger />
         <Separator orientation="vertical" />
         <Breadcrumb>
@@ -38,10 +36,9 @@ const Header = () => {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <ThemeToggle />
       </div>
     </header>
   );
 };
 
-export default Header;
+export { Toolbar };

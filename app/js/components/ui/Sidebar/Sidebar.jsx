@@ -6,6 +6,7 @@ import { Slot } from "@radix-ui/react-slot";
 import { Icon } from "@components/atoms/Icon/Icon.jsx";
 import { Button } from "@components/ui/Button/Button.jsx";
 import { Separator } from "@components/ui/Separator/Separator.jsx";
+//import { Sheet, SheetContent } from "@components/ui/Sheet/Sheet.jsx";
 import {
   Tooltip,
   TooltipContent,
@@ -143,7 +144,7 @@ const SidebarRail = forwardRef(({ className, ...props }, ref) => {
       tabIndex={-1}
       onClick={toggleSidebar}
       title="Toggle Sidebar"
-      className={cn("sidebar__rail", className)}
+      className={cn("sidebar__rail button--reset", className)}
       {...props}
     />
   );

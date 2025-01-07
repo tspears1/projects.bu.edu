@@ -4,6 +4,10 @@
   @include btn.button-reset();
 }
 
+.button--reset {
+  @include btn.button-reset();
+}
+
 .button {
   --_button-background-color:           var(--button-background-color, hsl(var(--color-primary)));
   --_button-background-color--hover:    var(--button-background-color--hover, hsl(var(--color-primary) / 0.8));

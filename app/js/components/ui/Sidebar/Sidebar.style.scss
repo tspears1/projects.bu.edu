@@ -4,7 +4,7 @@
    --_sidebar-transition-duration:             var(--sidebar-transition-duration, var(--duration-moderate));
    --_sidebar-transition-easing:               var(--sidebar-transition-easing, var(--ease-spring-2));
 
-   color: var(--color-sidebar-foreground);
+   color: hsl(var(--color-sidebar-foreground));
    display: none;
 
    @include mq.breakpoint(sm) {
@@ -12,9 +12,9 @@
    }
 
    &[data-collapsible='none'] {
-      background: var(--color-sidebar-background);
+      background-color: hsl(var(--color-sidebar-background));
       block-size: 100%;
-      color: var(--color-sidebar-foreground);
+      color: hsl(var(--color-sidebar-foreground));
       display: flex;
       flex-direction: column;
       inline-size: var(--sidebar-inline-size);
@@ -44,27 +44,41 @@
    }
 
    &[data-side='left'] {
+      --sidebar-rail-cursor: w-resize;
+      --sidebar-rail-inline-end: calc(var(--size-1) * -1);
       --sidebar-wrapper-inline-start: 0;
 
       &:where([data-collapsible='offcanvas']) {
+         --sidebar-rail-inline-end: calc(var(--shim-5) * -1);
          --sidebar-wrapper-inline-start: calc(var(--sidebar-inline-size) * -1);
       }
 
       &:where(:not([data-variant='floating'], [data-variant='inset'])) {
          --sidebar-wrapper-border-inline-end: var(--border-size-1) solid hsl(var(--color-border));
       }
+
+      &:where([data-state='collapsed']) {
+         --sidebar-rail-cursor: e-resize;
+      }
    }
 
    &[data-side='right'] {
       --sidebar-gap-rotate: 180deg;
+      --sidebar-rail-cursor: e-resize;
+      --sidebar-rail-inline-start: 0;
       --sidebar-wrapper-inline-end: 0;
 
       &:where([data-collapsible='offcanvas']) {
+         --sidebar-rail-inline-start: calc(var(--shim-5) * -1);
          --sidebar-wrapper-inline-end: calc(var(--sidebar-inline-size) * -1);
       }
 
       &:where(:not([data-variant='floating'], [data-variant='inset'])) {
          --sidebar-wrapper-border-inline-start: var(--border-size-1) solid hsl(var(--color-border));
+      }
+
+      &:where([data-state='collapsed']) {
+         --sidebar-rail-cursor: w-resize;
       }
    }
 
@@ -82,8 +96,8 @@
 }
 
 .sidebar__sheet {
-   background: var(--color-sidebar-background);
-   color: var(--color-sidebar-foreground);
+   background-color: hsl(var(--color-sidebar-background));
+   color: hsl(var(--color-sidebar-foreground));
    inline-size: var(--sidebar-inline-size);
    padding: 0;
 
@@ -131,19 +145,73 @@
 }
 
 .sidebar__inner {
+   display: flex;
+   block-size: 100%;
+   inline-size: 100%;
+   flex-direction: column;
+   background-color: hsl(var(--color-sidebar-background));
 
+   [data-variant='floating'] & {
+      border: var(--border-size-1) solid hsl(var(--color-sidebar-border));
+      border-radius: var(--radius-4);
+      box-shadow: var(--elevation-2);
+   }
 }
 
 .sidebar__trigger {
-
+   block-size: var(--sidebar-trigger-size, var(--size-4));
+   inline-size: var(--sidebar-trigger-size, var(--size-4));
 }
 
 .sidebar__rail {
+   cursor: var(--sidebar-rail-cursor, pointer);
+   display: none;
+   inline-size: var(--size-1);
+   inset-block: 0;
+   inset-inline-start: var(--sidebar-rail-inline-start, auto);
+   inset-inline-end: var(--sidebar-rail-inline-end, auto);
+   position: absolute;
+   transition: all var(--_sidebar-transition-duration) var(--_sidebar-transition-easing);
+   translate: -50%;
+   z-index: var(--z-drawer);
 
+   @include mq.breakpoint(xs) {
+      display: flex;
+   }
+
+   &::after {
+      content: '';
+      inline-size: var(--shim-2);
+      inset-block: 0;
+      inset-inline-start: 50%;
+      position: absolute;
+   }
+
+   [data-collapsible='offcanvas'] & {
+      translate: 0;
+
+      &::after {
+         inset-inline-start: 100%;
+      }
+   }
+
+   &:hover {
+      [data-collapsible='offcanvas'] & {
+         background: hsl(var(--color-sidebar-border));
+      }
+
+      &::after {
+         background: hsl(var(--color-sidebar-border));
+      }
+   }
 }
 
 .sidebar__inset {
-
+   position: relative;
+   display: flex;
+   min-block-size: var(--sidebar-block-size, 100svh);
+   flex: 1 1 0;
+   background-color: var
 }
 
 .sidebar__input {

@@ -17,5 +17,5 @@
 }
 
 @layer organisms {
-   @layer header { @include meta.load-css('../../js/components/organisms/Header/Header.style.scss'); }
+   @layer toolbar { @include meta.load-css('../../js/components/organisms/Toolbar/Toolbar.style.scss'); }
 }

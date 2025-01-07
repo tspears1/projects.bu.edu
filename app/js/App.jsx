@@ -1,9 +1,10 @@
 // Components ============================================
 import ContextProviders from "@components/organisms/ContextProviders/ContextProviders.jsx";
-import Header from "@components/organisms/Header/Header.jsx";
+import { Toolbar } from "./components/organisms/Toolbar/Toolbar.jsx";
 import { AppSidebar } from "@components/organisms/AppSidebar/AppSidebar.jsx";
 import { SidebarInset } from "./components/ui/Sidebar/Sidebar.jsx";
 import { Brand } from "@components/atoms/Brand/Brand.jsx";
+import { ThemeToggle } from "@components/ui/ThemeToggle/ThemeToggle.jsx";
 
 /**
  * @component App - Main application component.
@@ -17,12 +18,15 @@ const App = () => {
   return (
     <ContextProviders>
       <div className="site-wrapper">
-        <Brand className='site-brand' />
+        <div className="site-header">
+          <Brand className='site-brand' />
+          <ThemeToggle />
+        </div>
         <div className="site-inner">
           <AppSidebar />
           <SidebarInset>
             <div className="site-content">
-              <Header />
+              <Toolbar />
               <main className="site-main">
                 <div>Main</div>
               </main>
