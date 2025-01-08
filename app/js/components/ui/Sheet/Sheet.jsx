@@ -1,6 +1,6 @@
 "use client";
 
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { Icon } from "@components/atoms/Icon/Icon.jsx";
 

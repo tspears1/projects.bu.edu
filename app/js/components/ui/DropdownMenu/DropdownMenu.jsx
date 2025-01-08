@@ -1,6 +1,6 @@
 "use client"
 
-import { forwardRef } from "react"
+import React, { forwardRef } from "react"
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
 import { Icon } from "@components/atoms/Icon/Icon.jsx"
 import cn from 'classnames'

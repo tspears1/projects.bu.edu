@@ -1,5 +1,5 @@
 // React
-import { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 // Create context.
 const DatabaseContext = createContext(null);

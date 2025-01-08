@@ -23,6 +23,19 @@ export default function () {
         minify: isProduction,
         bundle: true,
       },
+      // esm: {
+      //   deps: {
+      //     "@radix-ui/react-dialog": "react@18.3.1",
+      //     "@radix-ui/react-dropdown-menu": "react@18.3.1",
+      //     "@radix-ui/react-separator": "react@18.3.1",
+      //     "@radix-ui/react-slot": "react@18.3.1",
+      //     "@radix-ui/react-tooltip": "react@18.3.1",
+      //     "classnames": "react@18.3.1",
+      //     "react-dom": "react@18.3.1",
+      //     "react-inlinesvg": "react@18.3.1",
+      //     "react": "react@18.3.1",
+      //   }
+      // }
     }));
 
     site.use(sass())
