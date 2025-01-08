@@ -5,7 +5,7 @@ import App from "./app/js/App.jsx";
 const ssr = ReactDOMServer.renderToString(React.createElement(App));
 
 export default function (_data, { url }) {
-  return `<!doctype html>
+   return `<!doctype html>
       <html>
          <head>
             <meta charset="utf-8">

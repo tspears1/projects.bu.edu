@@ -22,7 +22,7 @@ export default function () {
       options: {
         minify: isProduction,
         bundle: true,
-      },
+      }
     }));
 
     site.use(sass())

@@ -1,5 +1,5 @@
 import { Slot } from "@radix-ui/react-slot";
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 
 /**
  * @component Button - Main application component.

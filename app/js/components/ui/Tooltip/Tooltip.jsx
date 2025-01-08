@@ -2,7 +2,7 @@
 
 // Radix UI ==================================================
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 
 // Components ================================================
 const TooltipProvider = TooltipPrimitive.Provider;

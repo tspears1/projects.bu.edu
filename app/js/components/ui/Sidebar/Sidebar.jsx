@@ -1,4 +1,4 @@
-import { forwardRef, useMemo } from "react";
+import React, { forwardRef, useMemo } from "react";
 import cn from "classnames";
 
 // Components ==============================================
@@ -6,7 +6,7 @@ import { Slot } from "@radix-ui/react-slot";
 import { Icon } from "@components/atoms/Icon/Icon.jsx";
 import { Button } from "@components/ui/Button/Button.jsx";
 import { Separator } from "@components/ui/Separator/Separator.jsx";
-//import { Sheet, SheetContent } from "@components/ui/Sheet/Sheet.jsx";
+import { Sheet, SheetContent } from "@components/ui/Sheet/Sheet.jsx";
 import {
   Tooltip,
   TooltipContent,

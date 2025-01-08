@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { Icon } from "@components/atoms/Icon/Icon.jsx";
 
