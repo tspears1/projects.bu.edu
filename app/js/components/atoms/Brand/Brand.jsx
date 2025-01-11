@@ -1,3 +1,6 @@
+// React ====================================
+import React from "react";
+
 // Context =================================
 import { useDatabase } from "@context/database/database-context.jsx";
 

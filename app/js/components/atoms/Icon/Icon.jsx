@@ -1,3 +1,7 @@
+// React ====================================
+import React from "react";
+
+// Libraries ================================
 import SvgIcon from 'react-inlinesvg'
 
 /**

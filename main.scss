@@ -10,6 +10,10 @@
   @include meta.load-css('./app/css/global');
 }
 
+@layer utils {
+  @include meta.load-css('./app/css/utils');
+}
+
 @layer components {
   @include meta.load-css('./app/css/components');
 }

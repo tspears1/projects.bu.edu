@@ -1,4 +1,8 @@
 "use client";
+
+// React ====================================
+import React from "react";
+
 // Components ===============================
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbSeparator } from "@components/ui/Breadcrumbs/Breadcrumbs.jsx";
 import { BreadcrumbLink } from "@components/ui/Breadcrumbs/Breadcrumbs.jsx";

@@ -1,3 +1,7 @@
+// React ====================================
+import React from "react";
+
+// Components ===============================
 import { AssetCard } from "@components/molecules/AssetCard/AssetCard.jsx";
 
 /**

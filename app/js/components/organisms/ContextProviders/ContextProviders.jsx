@@ -1,3 +1,6 @@
+// React ====================================
+import React from "react";
+
 // Context ============================================
 import { DatabaseProvider } from "@context/database/database-context.jsx";
 import { SidebarProvider } from "@context/sidebar/sidebar-context.jsx";

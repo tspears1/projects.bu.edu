@@ -253,6 +253,7 @@ const SidebarGroupLabel = forwardRef(
         data-sidebar="group-label"
         className={cn(
           "sidebar__group-label",
+          "sidebar--has-icon",
           className,
         )}
         {...props}
@@ -272,6 +273,10 @@ const SidebarGroupAction = forwardRef(
         data-sidebar="group-action"
         className={cn(
           "sidebar__group-action",
+          "sidebar--has-icon",
+          "button--reset",
+          "focus-visible-ring",
+          "mobile-surface-expand",
           className,
         )}
         {...props}
@@ -336,14 +341,12 @@ const SidebarMenuButton = forwardRef(({
       data-sidebar="menu-button"
       data-size={size}
       data-active={isActive}
+      data-variant={variant}
       className={cn(
         "sidebar__menu-button",
-        { "sidebar__menu-button--active": isActive },
-        { "sidebar__menu-button--size-sm": size === "sm" },
-        { "sidebar__menu-button--size-lg": size === "lg" },
-        { "sidebar__menu-button--size-icon": size === "icon" },
-        { "sidebar__menu-button--variant-outline": variant === "outline" },
-        { "sidebar__menu-button--variant-default": variant === "default" },
+        "button--reset",
+        "sidebar--has-icon",
+        "focus-visible-ring",
         className,
       )}
       {...props}
@@ -384,9 +387,13 @@ const SidebarMenuAction = forwardRef(
       <Comp
         ref={ref}
         data-sidebar="menu-action"
+        data-show-on-hover={showOnHover}
         className={cn(
           "sidebar__menu-action",
-          { "sidebar__menu-action--show-on-hover": showOnHover },
+          "button--reset",
+          "sidebar--has-icon",
+          "focus-visible-ring",
+          "mobile-surface-expand",
           className,
         )}
         {...props}
@@ -454,7 +461,7 @@ const SidebarMenuSub = forwardRef(({ className, ...props }, ref) => (
 SidebarMenuSub.displayName = "SidebarMenuSub";
 
 const SidebarMenuSubItem = forwardRef(({ ...props }, ref) => (
-  <li ref={ref} {...props} />
+  <li className='sidebar__menu-sub-item' ref={ref} {...props} />
 ));
 SidebarMenuSubItem.displayName = "SidebarMenuSubItem";
 
@@ -476,6 +483,9 @@ const SidebarMenuSubButton = forwardRef(
         data-active={isActive}
         className={cn(
           "sidebar__menu-sub-button",
+          "button--reset",
+          "sidebar--has-icon",
+          "focus-visible-ring",
           { "sidebar__menu-sub-button--active": isActive },
           { "sidebar__menu-sub-button--size-sm": size === "sm" },
           { "sidebar__menu-sub-button--size-md": size === "md" },
