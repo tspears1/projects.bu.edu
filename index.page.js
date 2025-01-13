@@ -1,8 +1,8 @@
-import React from "react";
-import ReactDOMServer from "react-dom/server";
-import App from "./app/js/App.jsx";
+// import React from "react";
+// import ReactDOMServer from "react-dom/server";
+// import App from "./app/js/App.jsx";
 
-const ssr = ReactDOMServer.renderToString(React.createElement(App));
+// const ssr = ReactDOMServer.renderToString(React.createElement(App));
 
 export default function (_data, { url }) {
    return `<!doctype html>
@@ -14,7 +14,7 @@ export default function (_data, { url }) {
             <link rel="stylesheet" href="${url("./main.css")}" />
          </head>
          <body>
-            <div id="_root">${ssr}</div>
+            <div id="_root"></div>
             <script type="module" src="${url("./main.js")}"></script>
          </body>
       </html>

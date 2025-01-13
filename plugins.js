@@ -17,13 +17,14 @@ export default function () {
     site.data("projects", projects);
     site.data("org", config);
 
-    site.use(esbuild({
-      extensions: [".jsx"],
-      options: {
-        minify: isProduction,
-        bundle: true,
-      }
-    }));
+    // site.use(esbuild({
+    //   extensions: [".jsx"],
+    //   options: {
+    //     minify: isProduction,
+    //     bundle: true,
+    //     external: ["react", "react-dom"],
+    //   }
+    // }));
 
     site.use(sass())
 
