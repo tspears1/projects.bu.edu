@@ -44,7 +44,7 @@ const ProjectSwitcher = ({ projectData }) => {
    return (
       <SidebarMenu className="project-switcher">
          <SidebarMenuItem>
-            {/* <DropdownMenu>
+            <DropdownMenu>
                <DropdownMenuTrigger asChild>
                   <SidebarMenuButton
                      size="lg"
@@ -53,7 +53,7 @@ const ProjectSwitcher = ({ projectData }) => {
 
                   </SidebarMenuButton>
                </DropdownMenuTrigger>
-            </DropdownMenu> */}
+            </DropdownMenu>
          </SidebarMenuItem>
       </SidebarMenu>
    )

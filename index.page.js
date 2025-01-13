@@ -1,9 +1,3 @@
-// import React from "react";
-// import ReactDOMServer from "react-dom/server";
-// import App from "./app/js/App.jsx";
-
-// const ssr = ReactDOMServer.renderToString(React.createElement(App));
-
 export default function (_data, { url }) {
    return `<!doctype html>
       <html>

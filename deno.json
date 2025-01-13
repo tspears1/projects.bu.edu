@@ -3,7 +3,9 @@
     "@components/": "./app/js/components/",
     "@constants/": "./app/js/constants/",
     "@context/": "./app/js/context/",
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.2",
     "@hooks/": "./app/js/hooks/",
+    "@vitejs/plugin-react": "npm:@vitejs/plugin-react@^4.3.4",
     "lume/cms/": "https://cdn.jsdelivr.net/gh/lumeland/cms@v0.8.3/",
     "lume/": "https://deno.land/x/lume@v2.5.0/",
     "@types/react": "npm:@types/react@19.0.0",
@@ -15,24 +17,24 @@
     "classnames": "npm:classnames@2.5.1",
     "react-dom": "npm:react-dom@19.0.0",
     "react-inlinesvg": "npm:react-inlinesvg@4.1.5",
-    "react": "npm:react@19.0.0"
+    "react": "npm:react@19.0.0",
+    "vite": "npm:vite@^6.0.7"
   },
   "tasks": {
     "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
     "build": "export TASK=prod && deno task lume",
     "serve": "export TASK=dev && deno task lume -s",
     "cms": "deno task lume cms",
-    "esm:add": "deno run -A https://esm.sh/v135 add",
-    "esm:update": "deno run -A https://esm.sh/v135 update",
-    "esm:remove": "deno run -A https://esm.sh/v135 remove"
+    "vite:build": "deno run -A --node-modules-dir npm:vite build",
+    "vite:watch": "deno run -A --node-modules-dir npm:vite build --watch"
   },
   "compilerOptions": {
     "types": [
       "lume/types.ts"
     ],
     "jsx": "react-jsx",
-    "jsxImportSource": "npm:react@19.0.0",
-    "jsxImportSourceTypes": "npm:@types/react@19.0.0",
+    "jsxImportSource": "react",
+    "jsxImportSourceTypes": "@types/react",
     "lib": [
       "dom",
       "dom.iterable",

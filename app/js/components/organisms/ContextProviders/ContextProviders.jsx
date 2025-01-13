@@ -15,12 +15,14 @@ import { SidebarProvider } from "@context/sidebar/sidebar-context.jsx";
  */
 const ContextProviders = ({ children }) => {
   return (
-    <DatabaseProvider>
-      <SidebarProvider>
+    <SidebarProvider>
+      <DatabaseProvider>
         {children}
-      </SidebarProvider>
-    </DatabaseProvider>
+      </DatabaseProvider>
+    </SidebarProvider>
   );
 };
+
+ContextProviders.displayName = "ContextProviders";
 
 export default ContextProviders;

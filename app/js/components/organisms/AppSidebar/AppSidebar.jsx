@@ -1,5 +1,3 @@
-
-
 // React ====================================
 import React, { useEffect } from "react";
 
@@ -28,19 +26,23 @@ const AppSidebar = ({ ...props }) => {
    const { projects, sprints, org, taxonomy } = useDatabase();
 
    return (
-      <Sidebar collapsible="icon" {...props}>
-         <SidebarHeader>
-            <ProjectSwitcher projectData={projects} />
-         </SidebarHeader>
-         <SidebarContent>
-            <NavPhases />
-         </SidebarContent>
-         <SidebarFooter>
-            <div>Footer</div>
-         </SidebarFooter>
-         <SidebarRail />
-      </Sidebar>
+      <>
+         <Sidebar collapsible="icon" {...props}>
+            <SidebarHeader>
+               <ProjectSwitcher projectData={projects} />
+            </SidebarHeader>
+            <SidebarContent>
+               <NavPhases />
+            </SidebarContent>
+            <SidebarFooter>
+               <div>Footer</div>
+            </SidebarFooter>
+            <SidebarRail />
+         </Sidebar>
+      </>
    )
 }
+
+AppSidebar.displayName = "AppSidebar";
 
 export { AppSidebar }

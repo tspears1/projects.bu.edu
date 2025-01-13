@@ -38,14 +38,15 @@ import { useSidebar } from "@context/sidebar/sidebar-context.jsx";
  *
  * @returns {JSX.Element}
  */
-const Sidebar = forwardRef(({
+const Sidebar = ({
   side = "left",
   variant = "sidebar",
   collapsible = "offcanvas",
   className,
   children,
+  ref,
   ...props
-}, ref) => {
+}) => {
   const { isMobile, state, openMobile, setOpenMobile } = useSidebar();
 
   if (collapsible === "none") {
@@ -107,7 +108,7 @@ const Sidebar = forwardRef(({
       </div>
     </div>
   );
-});
+};
 Sidebar.displayName = "Sidebar";
 
 const SidebarTrigger = forwardRef(({ className, onClick, ...props }, ref) => {

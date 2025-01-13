@@ -35,7 +35,7 @@ const DatabaseProvider = ({ children }) => {
   }, []);
 
   return (
-    <DatabaseContext.Provider
+    <DatabaseContext
       value={{
         sprints: database?.sprints,
         projects: database?.projects,
@@ -44,8 +44,10 @@ const DatabaseProvider = ({ children }) => {
       }}
     >
       {children}
-    </DatabaseContext.Provider>
+    </DatabaseContext>
   );
 };
+
+DatabaseProvider.displayName = "DatabaseProvider";
 
 export { DatabaseProvider, useDatabase };

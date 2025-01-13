@@ -132,4 +132,6 @@ const ThemeToggle = () => {
    )
 }
 
+ThemeToggle.displayName = "ThemeToggle";
+
 export { ThemeToggle }
